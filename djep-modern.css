@@ -1,44 +1,47 @@
 /* =============================================
-   DJ Event Planner Client Portal CSS
+   DJ EVENT PLANNER CLIENT PORTAL CSS
    For: otawaeventplanning.ca
-   Optimized for Buttons + "Manage Music"
+   High Specificity + !important for DJEP
+   Last Updated: May 2026
    ============================================= */
 
 :root {
     --primary: #1a3c5e;
     --accent: #d4af37;
     --accent-hover: #c19a2e;
-    --success: #10b981;
     --dark: #0f172a;
     --gray: #64748b;
 }
 
-/* Base */
-body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(135deg, #f1f5f9 0%, #e0f2fe 100%);
-    color: var(--dark);
+/* Force base styles */
+body, html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e0f2fe 100%) !important;
+    color: var(--dark) !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* ==================== BUTTONS ==================== */
-
-/* Target common DJ Event Planner button classes */
 button,
-.input-button,
-.btn,
 a.button,
 a.btn,
+input[type="button"],
+input[type="submit"],
+.djep-button,
+.client-button,
+.btn,
 .button,
 .btn-primary,
 .btn-secondary,
 .btn-success,
 .btn-danger,
-.djep-button,
-.client-btn {
-    padding: 12px 28px !important;
+.btn-info,
+.btn-warning {
+    padding: 14px 32px !important;
     border-radius: 50px !important;
-    font-weight: 600 !important;
-    font-size: 1.02rem !important;
+    font-weight: 700 !important;
+    font-size: 1.05rem !important;
     cursor: pointer !important;
     transition: all 0.3s ease !important;
     border: none !important;
@@ -47,14 +50,15 @@ a.btn,
     justify-content: center !important;
     gap: 8px !important;
     text-decoration: none !important;
-    margin: 4px 0 !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1) !important;
+    margin: 6px 4px !important;
 }
 
-/* Primary Buttons */
+/* Primary Blue Buttons */
 button.btn-primary,
+a.button.primary,
 .btn-primary,
-.button.primary,
-a.button.primary {
+.button.primary {
     background: var(--primary) !important;
     color: white !important;
 }
@@ -67,49 +71,38 @@ button.btn-primary:hover,
     box-shadow: 0 12px 25px rgba(26, 60, 94, 0.4) !important;
 }
 
-/* Accent / Gold Buttons (great for Manage Music) */
+/* Gold Accent Buttons - Especially for Manage Music */
 button.btn-accent,
 .btn-accent,
 .button.accent,
-a.button.accent,
-button[style*="gold"],
-button:contains("Music") {
+a[href*="music"] button,
+a[href*="playlist"] button,
+button:contains("Music"),
+button:contains("Manage Music"),
+button:contains("Song List"),
+button:contains("Requests"),
+.manage-music,
+.music-btn {
     background: var(--accent) !important;
     color: #0f172a !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4) !important;
 }
 
 button.btn-accent:hover,
-.btn-accent:hover {
+.btn-accent:hover,
+button:contains("Music"):hover,
+.manage-music:hover {
     background: var(--accent-hover) !important;
-    transform: translateY(-3px) !important;
-}
-
-/* Manage Music Button - Specific Targeting */
-button:contains("Manage Music"),
-button:contains("Music Requests"),
-a:contains("Manage Music"),
-.manage-music-btn,
-.music-button,
-#music-requests-button {
-    background: var(--accent) !important;
-    color: #0f172a !important;
-    padding: 14px 32px !important;
-    font-size: 1.1rem !important;
-    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3) !important;
-}
-
-button:contains("Manage Music"):hover,
-.manage-music-btn:hover {
-    background: #c19a2e !important;
-    transform: scale(1.05) !important;
+    transform: translateY(-4px) scale(1.03) !important;
 }
 
 /* Outline Buttons */
 .btn-outline,
-.button.outline {
+.button.outline,
+a.button.outline {
     background: transparent !important;
-    border: 2px solid var(--primary) !important;
+    border: 2.5px solid var(--primary) !important;
     color: var(--primary) !important;
 }
 
@@ -118,38 +111,81 @@ button:contains("Manage Music"):hover,
     color: white !important;
 }
 
-/* Success & Danger */
-.btn-success { background: var(--success) !important; color: white !important; }
-.btn-danger { background: #ef4444 !important; color: white !important; }
-
-/* Cards & General Polish */
-.card, .panel, .box, div[style*="background"] {
+/* Cards / Panels */
+.card, .panel, .box, div.panel, .content-box, .event-box {
     background: white !important;
     border-radius: 20px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    padding: 24px !important;
+    margin-bottom: 20px !important;
 }
 
-.card:hover {
-    transform: translateY(-6px) !important;
+.card:hover, .panel:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Navigation / Sidebar */
+.nav-link, .menu-item, a.nav, .sidebar a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 16px 20px !important;
+    color: var(--gray) !important;
+    text-decoration: none !important;
+    border-radius: 12px !important;
+    margin: 4px 8px !important;
+}
+
+.nav-link:hover, .nav-link.active, .menu-item.active {
+    background: #f0f9ff !important;
+    color: var(--primary) !important;
+    font-weight: 600 !important;
 }
 
 /* Status Badges */
-.status, .badge, .label {
-    padding: 6px 18px !important;
+.status, .badge, .label, span.label {
+    padding: 8px 20px !important;
     border-radius: 50px !important;
     font-weight: 600 !important;
+    font-size: 0.9rem !important;
 }
 
-/* Make sure links that act as buttons also look good */
-a[href*="music"], a[href*="playlist"] {
-    color: var(--accent) !important;
-    font-weight: 600 !important;
+/* Tables */
+table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    background: white !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+th {
+    background: var(--primary) !important;
+    color: white !important;
+    padding: 16px !important;
+    text-align: left !important;
+}
+
+td {
+    padding: 16px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+tr:hover {
+    background: #f8fafc !important;
+}
+
+/* Welcome / Headings */
+h1, h2, h3, .welcome-text {
+    color: var(--primary) !important;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    button, .btn {
+@media (max-width: 992px) {
+    button, a.button, .btn {
         width: 100% !important;
-        margin: 8px 0 !important;
+        margin: 10px 0 !important;
     }
 }
