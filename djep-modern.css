@@ -1,164 +1,83 @@
 /* =============================================
-   MODERN DJ EVENT PLANNER CLIENT PORTAL CSS
-   Version: 2026 Modern Refresh
-   Clean • Professional • Responsive
+   DJ EVENT PLANNER - STRONG MODERN OVERRIDE
+   Paste this ENTIRE thing into Custom CSS
 ============================================= */
 
-/* CSS Variables - Easy Theming */
 :root {
-  /* Colors */
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
   --success: #10b981;
   --warning: #f59e0b;
   --danger: #ef4444;
-  --info: #3b82f6;
-  
-  /* Neutral */
   --bg: #f8fafc;
   --surface: #ffffff;
-  --surface2: #f1f5f9;
   --border: #e2e8f0;
   --text: #0f172a;
-  --text-muted: #64748b;
-  
-  /* Accents for playlists */
-  --spotify: #22c55e;
-  --must-play: #4ade80;
-  --play-if-poss: #eab308;
-  --dedication: #60a5fa;
-  --only-request: #a855f7;
-  --do-not-play: #f87171;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  
-  /* Radius */
   --radius: 12px;
-  --radius-sm: 8px;
 }
 
-/* Reset & Base */
-html { overflow-y: scroll; }
-a { text-decoration: none; color: var(--primary); }
-a:hover { color: var(--primary-hover); }
-
-body.djep-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--text);
-  background: var(--bg);
-  margin: 0;
-  padding: 0;
+/* Force base layout */
+body.djep-body, #djep-content, #djep-guestrequestcontent {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  background: var(--bg) !important;
+  color: var(--text) !important;
 }
 
-#djep-content,
-#djep-guestrequestcontent {
-  max-width: 860px;
-  margin: 24px auto;
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border);
-  overflow: hidden;
+/* Main container - modern card look */
+#djep-content, #djep-guestrequestcontent {
+  max-width: 880px !important;
+  margin: 30px auto !important;
+  background: white !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid var(--border) !important;
+  overflow: hidden !important;
 }
 
-/* Header & Navigation */
-#djep-navbar {
-  width: 100%;
-  max-width: 860px;
-  margin: 0 auto;
-}
-
+/* Navigation */
 ul#djep-navigation {
-  display: flex;
-  gap: 8px;
-  padding: 16px;
-  margin: 0;
-  list-style: none;
-  background: white;
-  border-bottom: 1px solid var(--border);
+  background: white !important;
+  border-bottom: 1px solid var(--border) !important;
+  gap: 6px !important;
+  padding: 12px !important;
 }
 
 ul#djep-navigation li {
-  flex: 1;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px !important;
+  overflow: hidden !important;
 }
 
-ul#djep-navigation li a:link,
-ul#djep-navigation li a:visited {
-  display: block;
-  padding: 14px 12px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 13.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #475569;
-  background: transparent;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+ul#djep-navigation li a {
+  padding: 14px 10px !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.2s !important;
 }
 
-ul#djep-navigation li:hover a {
-  background: #f1f5f9;
-  color: var(--text);
+ul#djep-navigation li.selected a,
+ul#djep-navigation li a:hover {
+  background: var(--primary) !important;
+  color: white !important;
 }
 
-ul#djep-navigation li.selected a {
-  background: var(--primary);
-  color: white;
-  box-shadow: var(--shadow);
+/* Headings */
+h1.djep-h1 { font-size: 2.1rem !important; font-weight: 700 !important; margin: 2rem 0 1.2rem !important; }
+h2.djep-h2 { font-size: 1.55rem !important; font-weight: 600 !important; color: #1e40af !important; }
+
+/* Title bars */
+.djep-titlebar, .djep-titlebarsmall, .djep-titlebarsmaller, .djep-titlebarnotices {
+  background: linear-gradient(145deg, #f8fafc, #f1f5f9) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  padding: 16px 20px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  margin: 24px auto !important;
 }
 
-/* Typography */
-h1.djep-h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 2rem 0 1.5rem;
-  letter-spacing: -0.025em;
-}
-
-h2.djep-h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1e40af;
-  margin: 2rem 0 1rem;
-}
-
-h3.djep-h3 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #334155;
-}
-
-/* Modern Title Bars */
-.djep-titlebar,
-.djep-titlebarsmall,
-.djep-titlebarsmaller {
-  background: linear-gradient(145deg, #f8fafc, #f1f5f9);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 16px 20px;
-  font-weight: 600;
-  color: #1e2937;
-  margin: 28px auto;
-  font-size: 15px;
-  box-shadow: var(--shadow-sm);
-}
-
-/* Status Rows */
-.djep-balanceduerow { background: #fef3c7 !important; color: #b45309; }
-.djep-balancepaidrow { background: #d1fae5 !important; color: #166534; }
-.djep-totalfeerow { background: #dbeafe !important; color: #1e40af; }
-.djep-totaldepositrow { background: #fee2e2 !important; color: #991b1b; }
-
-/* Playlist Boxes - Modern Cards */
+/* Playlist Cards */
 .djep-playlistbox,
 .djep-playlistboxspotify,
 .djep-playlistboxmustplay,
@@ -166,17 +85,16 @@ h3.djep-h3 {
 .djep-playlistboxplayifposs,
 .djep-playlistboxdedications,
 .djep-playlistboxonlyrequest {
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: white;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.2s ease;
-  margin-bottom: 16px;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+  border: 1px solid var(--border) !important;
+  background: white !important;
+  margin-bottom: 18px !important;
 }
 
 .djep-playlistbox:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12) !important;
+  transform: translateY(-3px) !important;
 }
 
 /* Playlist Headers */
@@ -186,168 +104,58 @@ h3.djep-h3 {
 .djep-playlistboxdedicationstitle,
 .djep-playlistboxonlyrequesttitle,
 .djep-playlistboxdonotplaytitle {
-  border-radius: var(--radius) var(--radius) 0 0;
-  padding: 14px 20px;
-  font-weight: 700;
-  font-size: 15px;
-  color: white;
-  margin: 0;
-  border: none;
+  border-radius: 12px 12px 0 0 !important;
+  padding: 14px 20px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: white !important;
 }
 
-.djep-playlistboxspotifytitle { background: linear-gradient(90deg, #22c55e, #4ade80); }
-.djep-playlistboxmustplaytitle { background: linear-gradient(90deg, #4ade80, #86efac); }
-.djep-playlistboxplayifposstitle { background: linear-gradient(90deg, #eab308, #fde047); }
-.djep-playlistboxdedicationstitle { background: linear-gradient(90deg, #60a5fa, #93c5fd); }
-.djep-playlistboxonlyrequesttitle { background: linear-gradient(90deg, #a855f7, #c084fc); }
-.djep-playlistboxdonotplaytitle { background: linear-gradient(90deg, #f87171, #fb7185); }
+/* Color overrides */
+.djep-playlistboxspotifytitle     { background: linear-gradient(90deg, #22c55e, #4ade80) !important; }
+.djep-playlistboxmustplaytitle    { background: linear-gradient(90deg, #4ade80, #86efac) !important; }
+.djep-playlistboxplayifposstitle  { background: linear-gradient(90deg, #eab308, #fde047) !important; }
+.djep-playlistboxdedicationstitle { background: linear-gradient(90deg, #60a5fa, #93c5fd) !important; }
+.djep-playlistboxonlyrequesttitle { background: linear-gradient(90deg, #a855f7, #c084fc) !important; }
+.djep-playlistboxdonotplaytitle   { background: linear-gradient(90deg, #f87171, #fb7185) !important; }
 
-/* Custom Types */
-.djep-playlistboxcustomtype1 { background: #ecfbff; }
-.djep-playlistboxcustomtype2 { background: #ecfff0; }
-.djep-playlistboxcustomtype3 { background: #fff3ff; }
-.djep-playlistboxcustomtype4 { background: #fff7ed; }
-.djep-playlistboxcustomtype5 { background: #fefce8; }
-
-/* Buttons - Modern */
+/* Buttons */
 .djep-planeventbutton,
 .djep-eventdetailsbutton,
 .djep-paymentbutton,
-.djep-readviewbutton,
 .djep-actionbutton,
 .djep-searchbutton,
-.djep-songideabutton {
-  padding: 12px 24px;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 14.5px;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: var(--shadow-sm);
-}
-
-.djep-planeventbutton {
-  background: linear-gradient(90deg, #10b981, #34d399);
-  color: white;
-}
-.djep-planeventbutton:hover { background: linear-gradient(90deg, #059669, #10b981); transform: translateY(-1px); }
-
-.djep-paymentbutton {
-  background: linear-gradient(90deg, #8b5cf6, #a855f7);
-  color: white;
-}
-.djep-paymentbutton:hover { background: linear-gradient(90deg, #7c3aed, #9333ea); }
-
-/* Form Elements */
-input.djep-input,
-select.djep-select,
-textarea.djep-textarea {
-  border: 2px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 12px 16px;
-  font-size: 15px;
-  transition: all 0.2s;
-  width: 100%;
-  background: white;
-}
-
-input.djep-input:focus,
-select.djep-select:focus,
-textarea.djep-textarea:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-  outline: none;
-}
-
-/* Tables */
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th {
-  background: #f8fafc;
-  padding: 14px 12px;
-  text-align: left;
-  font-weight: 600;
-  color: #475569;
-  border-bottom: 2px solid var(--border);
-}
-
-td {
-  padding: 14px 12px;
-  border-bottom: 1px solid var(--border);
-}
-
-tr:hover {
-  background: #f8fafc;
-}
-
-/* Special Song & Request Styling */
-.djep-esigned {
-  background-image: ur[](https://djep21.com/clients/images/padlock_closed.png);
-  background-size: 18px;
-  background-repeat: no-repeat;
-  background-position: 12px center;
-  padding-left: 42px;
-  font-weight: 600;
-  color: var(--success);
-}
-
-/* Progress & Status */
-#progressbar {
-  height: 8px;
-  border-radius: 9999px;
-  background: #e2e8f0;
-  overflow: hidden;
-}
-
-.ui-progressbar-value {
-  background: linear-gradient(90deg, var(--primary), #60a5fa);
-  height: 100%;
-}
-
-/* Mobile Improvements */
-@media (max-width: 768px) {
-  #djep-content,
-  #djep-guestrequestcontent {
-    margin: 12px;
-    border-radius: 16px;
-  }
-  
-  ul#djep-navigation {
-    flex-wrap: wrap;
-    padding: 12px;
-  }
-  
-  .djep-titlebar {
-    margin: 16px;
-    padding: 14px 16px;
-  }
-}
-
-/* Additional Polish */
-.djep-cleared { clear: both; }
-
-.djep-playlistboxtext {
-  font-size: 14.5px;
-  line-height: 1.5;
-}
-
-/* Guest Request Specific */
 .djep-guestsubmitrequests {
-  background: linear-gradient(90deg, #10b981, #34d399);
-  color: white;
-  font-size: 1.1rem;
-  padding: 16px 32px;
-  border-radius: var(--radius);
-  font-weight: 700;
+  border-radius: 10px !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  transition: all 0.2s !important;
 }
 
-.djep-guestsubmitrequests:hover {
-  transform: scale(1.03);
+.djep-paymentbutton,
+.djep-guestsubmitrequests {
+  background: linear-gradient(90deg, #8b5cf6, #a855f7) !important;
 }
+
+/* Form inputs */
+input.djep-input, select.djep-select, textarea.djep-textarea {
+  border: 2px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  font-size: 15px !important;
+}
+
+input.djep-input:focus, select.djep-select:focus, textarea.djep-textarea:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.15) !important;
+}
+
+/* Status rows */
+.djep-balanceduerow  { background-color: #fef3c7 !important; color: #b45309 !important; }
+.djep-balancepaidrow { background-color: #d1fae5 !important; color: #166534 !important; }
+.djep-totalfeerow    { background-color: #dbeafe !important; color: #1e40af !important; }
+
+/* Extra force */
+* { box-sizing: border-box; }
+.djep-esigned { padding-left: 40px !important; font-weight: 600 !important; }
