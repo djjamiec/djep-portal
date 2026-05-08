@@ -1,112 +1,84 @@
 :root {
-  --mm-black: #07070b;
-  --mm-deep: #11111a;
-  --mm-card: rgba(20, 20, 32, 0.94);
+  --mm-bg: #08080d;
+  --mm-card: #151522;
+  --mm-card-soft: #1d1d2d;
   --mm-purple: #7c3aed;
   --mm-pink: #ec4899;
   --mm-gold: #f5c542;
-  --mm-white: #ffffff;
-  --mm-soft: #d7d7ea;
-  --mm-muted: #a6a6bd;
-  --mm-border: rgba(255, 255, 255, 0.14);
-  --mm-radius: 18px;
-  --mm-shadow: 0 18px 45px rgba(0, 0, 0, 0.38);
+  --mm-text: #ffffff;
+  --mm-soft: #d8d8ea;
+  --mm-muted: #aaaabe;
+  --mm-border: rgba(255,255,255,0.12);
+  --mm-radius: 16px;
 }
 
 html,
 body {
   background:
-    radial-gradient(circle at top left, rgba(124, 58, 237, 0.24), transparent 34%),
-    radial-gradient(circle at top right, rgba(236, 72, 153, 0.18), transparent 30%),
-    linear-gradient(180deg, #090910 0%, #050507 100%) !important;
-  color: var(--mm-white) !important;
-  font-family: "Inter", "Montserrat", "Segoe UI", Arial, sans-serif !important;
+    radial-gradient(circle at top left, rgba(124,58,237,0.22), transparent 30%),
+    radial-gradient(circle at top right, rgba(236,72,153,0.16), transparent 28%),
+    var(--mm-bg) !important;
+  color: var(--mm-soft) !important;
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  overflow-x: hidden !important;
+}
+
+* {
+  box-sizing: border-box !important;
 }
 
 #container,
 #content,
-#main,
 #wrapper,
 .container,
 .content,
-.main,
-.wrapper,
-.portal,
-.clientarea {
-  max-width: 1180px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+.wrapper {
+  max-width: 1100px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 20px !important;
 }
 
-table,
 fieldset,
 .panel,
 .box,
-.card,
 .module,
-.section,
-.form-section,
-.event-section,
-.planning-section,
-.payment-section,
 .loginbox,
-.login-box,
-.client-login,
-div[class*="box"],
-div[class*="panel"],
-div[class*="section"] {
+.login-box {
   background: var(--mm-card) !important;
   border: 1px solid var(--mm-border) !important;
   border-radius: var(--mm-radius) !important;
-  box-shadow: var(--mm-shadow) !important;
-}
-
-fieldset,
-.panel,
-.box,
-.card,
-.module,
-.section,
-.form-section,
-.event-section,
-.planning-section,
-.payment-section,
-.loginbox,
-.login-box,
-.client-login {
   padding: 22px !important;
   margin-bottom: 22px !important;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.28) !important;
 }
 
 h1,
 h2,
 h3,
-h4,
-legend,
-.title,
-.page-title {
-  color: var(--mm-white) !important;
+legend {
+  color: var(--mm-text) !important;
   font-weight: 800 !important;
-  letter-spacing: -0.025em;
 }
 
-h1,
-.page-title {
-  font-size: clamp(30px, 4vw, 48px) !important;
+h1 {
+  font-size: clamp(28px, 7vw, 38px) !important;
+  line-height: 1.1 !important;
 }
 
 h2,
 legend {
-  border-bottom: 1px solid var(--mm-border) !important;
-  padding-bottom: 12px !important;
+  font-size: clamp(21px, 5vw, 26px) !important;
+  padding-bottom: 10px !important;
   margin-bottom: 18px !important;
+  border-bottom: 1px solid var(--mm-border) !important;
 }
 
 h2::after,
 legend::after {
   content: "";
   display: block;
-  width: 68px;
+  width: 60px;
   height: 3px;
   margin-top: 10px;
   border-radius: 999px;
@@ -114,30 +86,86 @@ legend::after {
 }
 
 p,
-td,
 li,
 label,
-span,
-div {
-  color: var(--mm-soft);
+td {
+  color: var(--mm-soft) !important;
 }
 
 small,
-.help,
-.description,
 .note,
-.hint {
+.help,
+.description {
   color: var(--mm-muted) !important;
 }
 
 a {
   color: #d8b4fe !important;
-  text-decoration: none !important;
   font-weight: 600;
+  text-decoration: none !important;
 }
 
 a:hover {
   color: var(--mm-gold) !important;
+}
+
+#nav,
+#menu,
+.nav,
+.menu,
+.navbar,
+ul.menu {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid var(--mm-border) !important;
+  border-radius: 18px !important;
+  padding: 10px !important;
+  margin-bottom: 24px !important;
+}
+
+#nav a,
+#menu a,
+.nav a,
+.menu a,
+.navbar a,
+ul.menu a {
+  display: inline-block;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+  color: var(--mm-text) !important;
+}
+
+#nav a:hover,
+#menu a:hover,
+.nav a:hover,
+.menu a:hover,
+.navbar a:hover,
+ul.menu a:hover {
+  background: linear-gradient(135deg, rgba(124,58,237,0.35), rgba(236,72,153,0.25)) !important;
+}
+
+input,
+select,
+textarea {
+  background: var(--mm-card-soft) !important;
+  color: var(--mm-text) !important;
+  border: 1px solid var(--mm-border) !important;
+  border-radius: 12px !important;
+  padding: 11px 12px !important;
+  max-width: 100% !important;
+  width: auto;
+}
+
+textarea {
+  width: 100% !important;
+  min-height: 120px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  border-color: var(--mm-gold) !important;
+  box-shadow: 0 0 0 3px rgba(245,197,66,0.18) !important;
 }
 
 button,
@@ -146,123 +174,35 @@ input[type="button"],
 input[type="reset"],
 .btn,
 .button,
-a.button,
-a.btn {
+a.btn,
+a.button {
   background: linear-gradient(135deg, var(--mm-purple), var(--mm-pink)) !important;
-  color: var(--mm-white) !important;
-  border: 1px solid rgba(255,255,255,0.18) !important;
+  color: #fff !important;
+  border: none !important;
   border-radius: 999px !important;
-  padding: 12px 22px !important;
+  padding: 12px 20px !important;
   font-weight: 800 !important;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  box-shadow: 0 12px 30px rgba(236,72,153,0.28) !important;
-  transition: all 0.22s ease !important;
   cursor: pointer;
-}
-
-button:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-.btn:hover,
-.button:hover,
-a.button:hover,
-a.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 38px rgba(124,58,237,0.42) !important;
-}
-
-input,
-select,
-textarea {
-  background: rgba(255,255,255,0.075) !important;
-  border: 1px solid var(--mm-border) !important;
-  color: var(--mm-white) !important;
-  border-radius: 14px !important;
-  padding: 11px 13px !important;
-  box-sizing: border-box;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none !important;
-  border-color: var(--mm-gold) !important;
-  box-shadow: 0 0 0 4px rgba(245,197,66,0.16) !important;
-}
-
-label {
-  font-weight: 700 !important;
-  margin-bottom: 6px !important;
+  box-shadow: 0 10px 24px rgba(236,72,153,0.25) !important;
 }
 
 table {
   width: 100% !important;
-  border-collapse: separate !important;
-  border-spacing: 0 8px !important;
-  padding: 12px !important;
+  border-collapse: collapse !important;
+  background: transparent !important;
 }
 
 th {
   color: var(--mm-gold) !important;
-  text-transform: uppercase;
-  font-size: 12px !important;
-  letter-spacing: 0.08em;
-  padding: 10px !important;
+  text-align: left !important;
+  font-size: 13px !important;
+  padding: 12px !important;
+  border-bottom: 1px solid var(--mm-border) !important;
 }
 
 td {
-  background: rgba(255,255,255,0.055) !important;
-  padding: 13px !important;
-  border-top: 1px solid rgba(255,255,255,0.08) !important;
+  padding: 12px !important;
   border-bottom: 1px solid rgba(255,255,255,0.08) !important;
-}
-
-td:first-child {
-  border-left: 1px solid rgba(255,255,255,0.08) !important;
-  border-radius: 14px 0 0 14px;
-}
-
-td:last-child {
-  border-right: 1px solid rgba(255,255,255,0.08) !important;
-  border-radius: 0 14px 14px 0;
-}
-
-nav,
-.menu,
-.navbar,
-#nav,
-#menu,
-ul.menu,
-.client-menu {
-  background: rgba(7,7,11,0.78) !important;
-  border: 1px solid var(--mm-border) !important;
-  border-radius: 999px !important;
-  padding: 10px 14px !important;
-  margin-bottom: 24px !important;
-}
-
-nav a,
-.menu a,
-.navbar a,
-#nav a,
-#menu a,
-.client-menu a {
-  color: var(--mm-white) !important;
-  padding: 9px 14px !important;
-  border-radius: 999px !important;
-  display: inline-block;
-}
-
-nav a:hover,
-.menu a:hover,
-.navbar a:hover,
-#nav a:hover,
-#menu a:hover,
-.client-menu a:hover {
-  background: linear-gradient(135deg, rgba(124,58,237,0.35), rgba(236,72,153,0.28)) !important;
-  color: var(--mm-white) !important;
 }
 
 .alert,
@@ -271,79 +211,92 @@ nav a:hover,
 .success,
 .warning,
 .error {
-  border-radius: 16px !important;
-  border: 1px solid rgba(245,197,66,0.35) !important;
+  border-radius: 14px !important;
+  padding: 14px 16px !important;
+  border: 1px solid rgba(245,197,66,0.32) !important;
   background: rgba(245,197,66,0.10) !important;
-  color: var(--mm-white) !important;
-  padding: 15px 18px !important;
+  color: var(--mm-text) !important;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100% !important;
+  height: auto !important;
 }
 
+/* Mobile Optimization */
 @media (max-width: 768px) {
+  html,
+  body {
+    font-size: 16px !important;
+  }
 
   #container,
   #content,
-  #main,
   #wrapper,
   .container,
   .content,
-  .main,
-  .wrapper,
-  .portal,
-  .clientarea {
-    padding: 14px !important;
+  .wrapper {
+    padding: 12px !important;
   }
 
   fieldset,
   .panel,
   .box,
-  .card,
   .module,
-  .section,
-  .form-section {
-    padding: 17px !important;
+  .loginbox,
+  .login-box {
+    padding: 16px !important;
+    margin-bottom: 16px !important;
+    border-radius: 14px !important;
   }
 
-  nav,
-  .menu,
-  .navbar,
   #nav,
   #menu,
-  ul.menu,
-  .client-menu {
-    border-radius: 18px !important;
+  .nav,
+  .menu,
+  .navbar,
+  ul.menu {
+    border-radius: 14px !important;
+    padding: 8px !important;
   }
 
-  nav a,
-  .menu a,
-  .navbar a,
   #nav a,
   #menu a,
-  .client-menu a {
-    display: block;
-    margin-bottom: 6px;
+  .nav a,
+  .menu a,
+  .navbar a,
+  ul.menu a {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 6px !important;
+    text-align: center !important;
   }
 
-  table,
-  thead,
-  tbody,
-  tr,
-  td,
-  th {
-    display: block;
-    width: 100%;
+  input,
+  select,
+  textarea,
+  button,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"],
+  .btn,
+  .button,
+  a.btn,
+  a.button {
+    width: 100% !important;
+    margin-bottom: 10px !important;
   }
 
+  table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+  }
+
+  th,
   td {
-    border-radius: 14px !important;
-    margin-bottom: 8px;
-  }
-
-  th {
-    display: none;
+    padding: 10px !important;
+    font-size: 14px !important;
   }
 }
