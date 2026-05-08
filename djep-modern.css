@@ -1,181 +1,155 @@
 /* =============================================
-   DJ Event Planner - Custom Portal CSS
-   Client Portal for: otawaeventplanning.ca
-   Author: Grok for Ottawa Event Planning
+   DJ Event Planner Client Portal CSS
+   For: otawaeventplanning.ca
+   Optimized for Buttons + "Manage Music"
    ============================================= */
 
 :root {
-    --primary: #1a3c5e;      /* Deep Navy */
-    --accent: #d4af37;       /* Elegant Gold */
+    --primary: #1a3c5e;
+    --accent: #d4af37;
     --accent-hover: #c19a2e;
     --success: #10b981;
-    --danger: #ef4444;
-    --light: #f8fafc;
     --dark: #0f172a;
     --gray: #64748b;
 }
 
-/* Reset & Base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Base */
 body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     background: linear-gradient(135deg, #f1f5f9 0%, #e0f2fe 100%);
     color: var(--dark);
-    line-height: 1.6;
 }
 
-/* Buttons - Works perfectly with DJ Event Planner */
-.btn, button {
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-decoration: none;
+/* ==================== BUTTONS ==================== */
+
+/* Target common DJ Event Planner button classes */
+button,
+.input-button,
+.btn,
+a.button,
+a.btn,
+.button,
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.djep-button,
+.client-btn {
+    padding: 12px 28px !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 1.02rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+    margin: 4px 0 !important;
 }
 
-.btn-primary, .btn-primary:hover {
-    background: var(--primary);
-    color: white;
+/* Primary Buttons */
+button.btn-primary,
+.btn-primary,
+.button.primary,
+a.button.primary {
+    background: var(--primary) !important;
+    color: white !important;
 }
 
-.btn-primary:hover {
-    background: #132e48;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(26, 60, 94, 0.35);
+button.btn-primary:hover,
+.btn-primary:hover,
+.button.primary:hover {
+    background: #132e48 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 25px rgba(26, 60, 94, 0.4) !important;
 }
 
-.btn-accent, .btn-accent:hover {
-    background: var(--accent);
-    color: var(--dark);
+/* Accent / Gold Buttons (great for Manage Music) */
+button.btn-accent,
+.btn-accent,
+.button.accent,
+a.button.accent,
+button[style*="gold"],
+button:contains("Music") {
+    background: var(--accent) !important;
+    color: #0f172a !important;
+    font-weight: 700 !important;
 }
 
+button.btn-accent:hover,
 .btn-accent:hover {
-    background: var(--accent-hover);
-    transform: translateY(-3px);
+    background: var(--accent-hover) !important;
+    transform: translateY(-3px) !important;
 }
 
-.btn-outline {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
+/* Manage Music Button - Specific Targeting */
+button:contains("Manage Music"),
+button:contains("Music Requests"),
+a:contains("Manage Music"),
+.manage-music-btn,
+.music-button,
+#music-requests-button {
+    background: var(--accent) !important;
+    color: #0f172a !important;
+    padding: 14px 32px !important;
+    font-size: 1.1rem !important;
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3) !important;
+}
+
+button:contains("Manage Music"):hover,
+.manage-music-btn:hover {
+    background: #c19a2e !important;
+    transform: scale(1.05) !important;
+}
+
+/* Outline Buttons */
+.btn-outline,
+.button.outline {
+    background: transparent !important;
+    border: 2px solid var(--primary) !important;
+    color: var(--primary) !important;
 }
 
 .btn-outline:hover {
-    background: var(--primary);
-    color: white;
+    background: var(--primary) !important;
+    color: white !important;
 }
 
-.btn-success { background: var(--success); color: white; }
-.btn-danger { background: var(--danger); color: white; }
+/* Success & Danger */
+.btn-success { background: var(--success) !important; color: white !important; }
+.btn-danger { background: #ef4444 !important; color: white !important; }
 
-/* Cards */
-.card {
-    background: white;
-    border-radius: 20px;
-    padding: 1.8rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
+/* Cards & General Polish */
+.card, .panel, .box, div[style*="background"] {
+    background: white !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px) !important;
 }
 
 /* Status Badges */
-.status {
-    padding: 6px 18px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
+.status, .badge, .label {
+    padding: 6px 18px !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
 }
 
-.status-confirmed { background: #d1fae5; color: #10b981; }
-.status-pending   { background: #fef3c7; color: #d97706; }
-.status-complete  { background: #dbeafe; color: var(--primary); }
-
-/* Navigation Links */
-.nav-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 20px;
-    color: var(--gray);
-    text-decoration: none;
-    border-radius: 12px;
-    margin-bottom: 6px;
-    transition: all 0.3s;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    background: #f0f9ff;
-    color: var(--primary);
-    font-weight: 600;
-}
-
-/* Tables */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-th {
-    background: var(--primary);
-    color: white;
-    padding: 1.1rem;
-    text-align: left;
-    font-weight: 600;
-}
-
-td {
-    padding: 1.1rem;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-tr:hover {
-    background: #f8fafc;
-}
-
-/* Progress Bar */
-.progress-bar {
-    height: 8px;
-    background: linear-gradient(90deg, var(--accent), var(--primary));
-    border-radius: 9999px;
+/* Make sure links that act as buttons also look good */
+a[href*="music"], a[href*="playlist"] {
+    color: var(--accent) !important;
+    font-weight: 600 !important;
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-    .sidebar {
+@media (max-width: 768px) {
+    button, .btn {
         width: 100% !important;
-        position: relative !important;
-        height: auto !important;
+        margin: 8px 0 !important;
     }
-}
-
-/* Extra Polish */
-.welcome {
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: var(--dark);
-}
-
-h1, h2, h3 {
-    color: var(--primary);
 }
