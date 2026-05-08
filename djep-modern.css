@@ -1,12 +1,3 @@
-@import url(https://djep21.com/clients/includes/stylesheet_updates.css);
-@charset "utf-8";
-
-/*
-  Midnight Music DJEP Modern Portal Theme
-  Designed as a safer override/replacement for the uploaded DJEP stylesheet.
-  Brand direction: premium black, warm gold, clean white cards, modern mobile-first layout.
-*/
-
 :root {
   --mm-black: #070707;
   --mm-black-2: #111111;
