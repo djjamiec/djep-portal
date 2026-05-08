@@ -1,0 +1,349 @@
+:root {
+  --mm-black: #07070b;
+  --mm-deep: #11111a;
+  --mm-card: rgba(20, 20, 32, 0.94);
+  --mm-purple: #7c3aed;
+  --mm-pink: #ec4899;
+  --mm-gold: #f5c542;
+  --mm-white: #ffffff;
+  --mm-soft: #d7d7ea;
+  --mm-muted: #a6a6bd;
+  --mm-border: rgba(255, 255, 255, 0.14);
+  --mm-radius: 18px;
+  --mm-shadow: 0 18px 45px rgba(0, 0, 0, 0.38);
+}
+
+html,
+body {
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.24), transparent 34%),
+    radial-gradient(circle at top right, rgba(236, 72, 153, 0.18), transparent 30%),
+    linear-gradient(180deg, #090910 0%, #050507 100%) !important;
+  color: var(--mm-white) !important;
+  font-family: "Inter", "Montserrat", "Segoe UI", Arial, sans-serif !important;
+}
+
+#container,
+#content,
+#main,
+#wrapper,
+.container,
+.content,
+.main,
+.wrapper,
+.portal,
+.clientarea {
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+table,
+fieldset,
+.panel,
+.box,
+.card,
+.module,
+.section,
+.form-section,
+.event-section,
+.planning-section,
+.payment-section,
+.loginbox,
+.login-box,
+.client-login,
+div[class*="box"],
+div[class*="panel"],
+div[class*="section"] {
+  background: var(--mm-card) !important;
+  border: 1px solid var(--mm-border) !important;
+  border-radius: var(--mm-radius) !important;
+  box-shadow: var(--mm-shadow) !important;
+}
+
+fieldset,
+.panel,
+.box,
+.card,
+.module,
+.section,
+.form-section,
+.event-section,
+.planning-section,
+.payment-section,
+.loginbox,
+.login-box,
+.client-login {
+  padding: 22px !important;
+  margin-bottom: 22px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+legend,
+.title,
+.page-title {
+  color: var(--mm-white) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em;
+}
+
+h1,
+.page-title {
+  font-size: clamp(30px, 4vw, 48px) !important;
+}
+
+h2,
+legend {
+  border-bottom: 1px solid var(--mm-border) !important;
+  padding-bottom: 12px !important;
+  margin-bottom: 18px !important;
+}
+
+h2::after,
+legend::after {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--mm-gold), var(--mm-pink));
+}
+
+p,
+td,
+li,
+label,
+span,
+div {
+  color: var(--mm-soft);
+}
+
+small,
+.help,
+.description,
+.note,
+.hint {
+  color: var(--mm-muted) !important;
+}
+
+a {
+  color: #d8b4fe !important;
+  text-decoration: none !important;
+  font-weight: 600;
+}
+
+a:hover {
+  color: var(--mm-gold) !important;
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.btn,
+.button,
+a.button,
+a.btn {
+  background: linear-gradient(135deg, var(--mm-purple), var(--mm-pink)) !important;
+  color: var(--mm-white) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  border-radius: 999px !important;
+  padding: 12px 22px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: 0 12px 30px rgba(236,72,153,0.28) !important;
+  transition: all 0.22s ease !important;
+  cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+.btn:hover,
+.button:hover,
+a.button:hover,
+a.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgba(124,58,237,0.42) !important;
+}
+
+input,
+select,
+textarea {
+  background: rgba(255,255,255,0.075) !important;
+  border: 1px solid var(--mm-border) !important;
+  color: var(--mm-white) !important;
+  border-radius: 14px !important;
+  padding: 11px 13px !important;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  border-color: var(--mm-gold) !important;
+  box-shadow: 0 0 0 4px rgba(245,197,66,0.16) !important;
+}
+
+label {
+  font-weight: 700 !important;
+  margin-bottom: 6px !important;
+}
+
+table {
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 8px !important;
+  padding: 12px !important;
+}
+
+th {
+  color: var(--mm-gold) !important;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  letter-spacing: 0.08em;
+  padding: 10px !important;
+}
+
+td {
+  background: rgba(255,255,255,0.055) !important;
+  padding: 13px !important;
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+td:first-child {
+  border-left: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 14px 0 0 14px;
+}
+
+td:last-child {
+  border-right: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 0 14px 14px 0;
+}
+
+nav,
+.menu,
+.navbar,
+#nav,
+#menu,
+ul.menu,
+.client-menu {
+  background: rgba(7,7,11,0.78) !important;
+  border: 1px solid var(--mm-border) !important;
+  border-radius: 999px !important;
+  padding: 10px 14px !important;
+  margin-bottom: 24px !important;
+}
+
+nav a,
+.menu a,
+.navbar a,
+#nav a,
+#menu a,
+.client-menu a {
+  color: var(--mm-white) !important;
+  padding: 9px 14px !important;
+  border-radius: 999px !important;
+  display: inline-block;
+}
+
+nav a:hover,
+.menu a:hover,
+.navbar a:hover,
+#nav a:hover,
+#menu a:hover,
+.client-menu a:hover {
+  background: linear-gradient(135deg, rgba(124,58,237,0.35), rgba(236,72,153,0.28)) !important;
+  color: var(--mm-white) !important;
+}
+
+.alert,
+.notice,
+.message,
+.success,
+.warning,
+.error {
+  border-radius: 16px !important;
+  border: 1px solid rgba(245,197,66,0.35) !important;
+  background: rgba(245,197,66,0.10) !important;
+  color: var(--mm-white) !important;
+  padding: 15px 18px !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+
+  #container,
+  #content,
+  #main,
+  #wrapper,
+  .container,
+  .content,
+  .main,
+  .wrapper,
+  .portal,
+  .clientarea {
+    padding: 14px !important;
+  }
+
+  fieldset,
+  .panel,
+  .box,
+  .card,
+  .module,
+  .section,
+  .form-section {
+    padding: 17px !important;
+  }
+
+  nav,
+  .menu,
+  .navbar,
+  #nav,
+  #menu,
+  ul.menu,
+  .client-menu {
+    border-radius: 18px !important;
+  }
+
+  nav a,
+  .menu a,
+  .navbar a,
+  #nav a,
+  #menu a,
+  .client-menu a {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  table,
+  thead,
+  tbody,
+  tr,
+  td,
+  th {
+    display: block;
+    width: 100%;
+  }
+
+  td {
+    border-radius: 14px !important;
+    margin-bottom: 8px;
+  }
+
+  th {
+    display: none;
+  }
+}
