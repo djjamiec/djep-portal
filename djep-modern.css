@@ -1,353 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal CSS - Ottawa Event Planning</title>
-    <style>
-        :root {
-            --primary: #1a3c5e;      /* Deep navy blue */
-            --accent: #d4af37;       /* Elegant gold */
-            --accent-hover: #c19a2e;
-            --success: #10b981;
-            --danger: #ef4444;
-            --light: #f8fafc;
-            --dark: #0f172a;
-            --gray: #64748b;
-        }
+/* =============================================
+   DJ Event Planner - Custom Portal CSS
+   Client Portal for: otawaeventplanning.ca
+   Author: Grok for Ottawa Event Planning
+   ============================================= */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+:root {
+    --primary: #1a3c5e;      /* Deep Navy */
+    --accent: #d4af37;       /* Elegant Gold */
+    --accent-hover: #c19a2e;
+    --success: #10b981;
+    --danger: #ef4444;
+    --light: #f8fafc;
+    --dark: #0f172a;
+    --gray: #64748b;
+}
 
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e0f2fe 100%);
-            color: var(--dark);
-            line-height: 1.6;
-        }
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Header */
-        .header {
-            background: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e0f2fe 100%);
+    color: var(--dark);
+    line-height: 1.6;
+}
 
-        .logo {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+/* Buttons - Works perfectly with DJ Event Planner */
+.btn, button {
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+}
 
-        .logo::before {
-            content: "🎵";
-            font-size: 2rem;
-        }
+.btn-primary, .btn-primary:hover {
+    background: var(--primary);
+    color: white;
+}
 
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
+.btn-primary:hover {
+    background: #132e48;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 60, 94, 0.35);
+}
 
-        .btn {
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
+.btn-accent, .btn-accent:hover {
+    background: var(--accent);
+    color: var(--dark);
+}
 
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
+.btn-accent:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
+}
 
-        .btn-primary:hover {
-            background: #132e48;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(26, 60, 94, 0.3);
-        }
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
 
-        .btn-accent {
-            background: var(--accent);
-            color: var(--dark);
-        }
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
 
-        .btn-accent:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
-        }
+.btn-success { background: var(--success); color: white; }
+.btn-danger { background: var(--danger); color: white; }
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
+/* Cards */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.8rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
 
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
 
-        /* Sidebar */
-        .sidebar {
-            width: 280px;
-            background: white;
-            height: calc(100vh - 73px);
-            position: fixed;
-            left: 0;
-            top: 73px;
-            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.06);
-            padding: 2rem 1rem;
-            overflow-y: auto;
-        }
+/* Status Badges */
+.status {
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
 
-        .nav-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 20px;
-            color: var(--gray);
-            text-decoration: none;
-            border-radius: 12px;
-            margin-bottom: 6px;
-            transition: all 0.3s;
-        }
+.status-confirmed { background: #d1fae5; color: #10b981; }
+.status-pending   { background: #fef3c7; color: #d97706; }
+.status-complete  { background: #dbeafe; color: var(--primary); }
 
-        .nav-link:hover,
-        .nav-link.active {
-            background: #f0f9ff;
-            color: var(--primary);
-            font-weight: 600;
-        }
+/* Navigation Links */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    color: var(--gray);
+    text-decoration: none;
+    border-radius: 12px;
+    margin-bottom: 6px;
+    transition: all 0.3s;
+}
 
-        /* Main Content */
-        .main-content {
-            margin-left: 280px;
-            padding: 2rem;
-        }
+.nav-link:hover,
+.nav-link.active {
+    background: #f0f9ff;
+    color: var(--primary);
+    font-weight: 600;
+}
 
-        .welcome {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
 
-        .subtitle {
-            color: var(--gray);
-            margin-bottom: 2rem;
-        }
+th {
+    background: var(--primary);
+    color: white;
+    padding: 1.1rem;
+    text-align: left;
+    font-weight: 600;
+}
 
-        /* Cards */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
+td {
+    padding: 1.1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
 
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 1.75rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+tr:hover {
+    background: #f8fafc;
+}
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-        }
+/* Progress Bar */
+.progress-bar {
+    height: 8px;
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    border-radius: 9999px;
+}
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.25rem;
-        }
+/* Responsive */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+    }
+}
 
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
+/* Extra Polish */
+.welcome {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--dark);
+}
 
-        /* Event Status */
-        .status {
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .status-confirmed { background: #d1fae5; color: #10b981; }
-        .status-pending { background: #fef3c7; color: #d97706; }
-        .status-complete { background: #dbeafe; color: var(--primary); }
-
-        /* Buttons in cards */
-        .action-btn {
-            width: 100%;
-            margin-top: 1rem;
-            padding: 14px;
-            font-size: 1.05rem;
-        }
-
-        /* Table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        th {
-            background: var(--primary);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-        }
-
-        td {
-            padding: 1rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        tr:hover {
-            background: #f8fafc;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                top: 0;
-            }
-            .main-content {
-                margin-left: 0;
-            }
-        }
-
-        /* Extra flair */
-        .progress-bar {
-            height: 8px;
-            background: linear-gradient(90deg, var(--accent), var(--primary));
-            border-radius: 9999px;
-            margin-top: 8px;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Example Usage -->
-    <div class="header">
-        <div class="logo">Ottawa Event Planning</div>
-        <div class="nav-right">
-            <button class="btn btn-outline">My Events</button>
-            <button class="btn btn-primary">New Event <span style="font-size:1.3rem;">+</span></button>
-            <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(45deg,#1a3c5e,#d4af37);display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;">JD</div>
-        </div>
-    </div>
-
-    <div class="sidebar">
-        <a href="#" class="nav-link active">🏠 Dashboard</a>
-        <a href="#" class="nav-link">🎤 My Events</a>
-        <a href="#" class="nav-link">📅 Timeline</a>
-        <a href="#" class="nav-link">💰 Budget</a>
-        <a href="#" class="nav-link">🤝 Vendors</a>
-        <a href="#" class="nav-link">📋 Checklist</a>
-        <a href="#" class="nav-link">📸 Gallery</a>
-        <a href="#" class="nav-link">💬 Messages</a>
-    </div>
-
-    <div class="main-content">
-        <h1 class="welcome">Welcome back, Jessica 👋</h1>
-        <p class="subtitle">Your Ottawa celebration is shaping up beautifully</p>
-
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Next Event</div>
-                    <span class="status status-confirmed">Confirmed</span>
-                </div>
-                <h3>Sarah &amp; Michael's Wedding</h3>
-                <p style="color:var(--gray);margin:8px 0;">June 14, 2026 • 4:00 PM • Ottawa</p>
-                <div style="background:#f1f5f9;padding:12px;border-radius:12px;margin:1rem 0;">
-                    <small>Timeline Progress</small>
-                    <div class="progress-bar" style="width:75%"></div>
-                </div>
-                <button class="btn btn-primary action-btn">View Full Details</button>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Budget Overview</div>
-                </div>
-                <h2 style="font-size:2.5rem;color:var(--primary);">$18,420 <span style="font-size:1rem;color:var(--gray);">/ $24,000</span></h2>
-                <button class="btn btn-accent action-btn">Update Budget</button>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Vendors Confirmed</div>
-                </div>
-                <div style="display:flex;gap:12px;flex-wrap:wrap;">
-                    <div style="background:#f0f9ff;padding:10px 16px;border-radius:9999px;font-size:0.95rem;">DJ Grok</div>
-                    <div style="background:#f0f9ff;padding:10px 16px;border-radius:9999px;font-size:0.95rem;">Venue: The Glebe</div>
-                    <div style="background:#f0f9ff;padding:10px 16px;border-radius:9999px;font-size:0.95rem;">Catering</div>
-                </div>
-                <button class="btn btn-primary action-btn" style="margin-top:1.5rem;">Manage Vendors</button>
-            </div>
-        </div>
-
-        <h2 style="margin:2.5rem 0 1rem;">Upcoming Milestones</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Final Guest Count</td>
-                    <td>May 20, 2026</td>
-                    <td><span class="status status-pending">Pending</span></td>
-                    <td><button class="btn btn-outline" style="padding:6px 16px;font-size:0.9rem;">Mark Complete</button></td>
-                </tr>
-                <tr>
-                    <td>Music Playlist Approval</td>
-                    <td>May 28, 2026</td>
-                    <td><span class="status status-confirmed">Approved</span></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-</body>
-</html>
+h1, h2, h3 {
+    color: var(--primary);
+}
