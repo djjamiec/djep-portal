@@ -1,825 +1,433 @@
+/* Midnight Music Modern DJEP Portal CSS */
+/* Paste into DJ Event Planner Custom CSS */
+
+/* ---------- GLOBAL ---------- */
+
 :root {
-    --mm-bg: #f8f5f1;
-    --mm-card: #ffffff;
-    --mm-card-soft: #fffaf5;
-    --mm-text: #1f1f1f;
-    --mm-muted: #666666;
-    --mm-border: #e3d8ce;
-    --mm-accent: #cbb9a8;
-    --mm-accent-dark: #9a806a;
-    --mm-accent-light: #f0e6dc;
-    --mm-gold: #d8b76a;
-    --mm-success: #2f8f46;
-    --mm-warning: #b87900;
-    --mm-danger: #b42318;
-    --mm-info: #2367a6;
-    --mm-shadow: 0 8px 28px rgba(31, 31, 31, 0.10);
-    --mm-radius: 16px;
+  --mm-bg: #f8f5f1;
+  --mm-card: #ffffff;
+  --mm-text: #1f1f1f;
+  --mm-muted: #666666;
+  --mm-gold: #cbb9a8;
+  --mm-gold-dark: #a88f78;
+  --mm-border: #e6ded6;
+  --mm-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  --mm-radius: 16px;
 }
 
-/* Base Page */
-html {
-    overflow-y: scroll !important;
-}
-
-body.djep-body,
+html,
 body {
-    background: radial-gradient(circle at top, #ffffff 0%, var(--mm-bg) 45%, #efe7df 100%) !important;
-    color: var(--mm-text) !important;
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif !important;
-    font-size: 14px !important;
-    line-height: 1.45 !important;
+  margin: 0;
+  padding: 0;
+  background: var(--mm-bg) !important;
+  color: var(--mm-text) !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 16px;
+  line-height: 1.5;
 }
+
+/* ---------- MAIN CONTAINER ---------- */
+
+body,
+#container,
+#wrapper,
+#main,
+#content,
+.content,
+.maincontent,
+.portal,
+.client-area {
+  max-width: 1180px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+
+#container,
+#wrapper,
+#main,
+#content,
+.content,
+.maincontent {
+  padding: 18px !important;
+}
+
+/* ---------- CARDS / SECTIONS ---------- */
+
+table,
+.formbox,
+.box,
+.panel,
+.section,
+fieldset,
+.djep-section,
+.event-section,
+.portal-section {
+  background: var(--mm-card) !important;
+  border: 1px solid var(--mm-border) !important;
+  border-radius: var(--mm-radius) !important;
+  box-shadow: var(--mm-shadow);
+  box-sizing: border-box;
+}
+
+fieldset {
+  padding: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+legend,
+h1,
+h2,
+h3,
+.sectiontitle,
+.title {
+  color: var(--mm-text) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 30px !important;
+}
+
+h2 {
+  font-size: 24px !important;
+}
+
+h3 {
+  font-size: 20px !important;
+}
+
+/* ---------- LINKS ---------- */
 
 a {
-    color: #8a6547 !important;
-    text-decoration: none !important;
+  color: #7a604a !important;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #5c3f2c !important;
-    text-decoration: underline !important;
+  color: var(--mm-gold-dark) !important;
+  text-decoration: underline;
 }
 
-/* Main Containers */
-#djep-page,
-#djep-guestrequestpage {
-    width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
+/* ---------- BUTTONS ---------- */
+
+input[type="submit"],
+input[type="button"],
+button,
+.button,
+.btn,
+.djep-button,
+.djep_button,
+a.button,
+a.btn,
+a.djep-button,
+a.djep_button,
+.manage-music a,
+.manage_music a,
+#manage_music a,
+.music-request a,
+.music_requests a,
+.planningforms a,
+.planning-forms a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-height: 44px;
+  padding: 12px 18px !important;
+  margin: 6px 6px 6px 0 !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--mm-gold-dark) !important;
+  background: var(--mm-gold) !important;
+  color: #1f1f1f !important;
+  font-weight: 800 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
 }
 
-#djep-content,
-#djep-guestrequestcontent {
-    background: rgba(255,255,255,0.96) !important;
-    color: var(--mm-text) !important;
-    border: 1px solid var(--mm-border) !important;
-    border-radius: 22px !important;
-    box-shadow: var(--mm-shadow) !important;
-    max-width: 1180px !important;
-    width: calc(100% - 28px) !important;
-    box-sizing: border-box !important;
-    padding: 18px !important;
-    margin: 16px auto !important;
-    overflow: visible !important;
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover,
+.btn:hover,
+.djep-button:hover,
+.djep_button:hover,
+a.button:hover,
+a.btn:hover {
+  background: var(--mm-gold-dark) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  text-decoration: none !important;
 }
 
-#djep-header {
-    text-align: center !important;
-    padding: 10px 0 !important;
+/* Make sure DJEP music buttons never disappear */
+#add_request,
+#add_requests,
+#music_requests,
+#music_request,
+#request_list,
+#special_songs,
+#must_play,
+#do_not_play,
+.add_request,
+.add_requests,
+.music_buttons,
+.request_buttons {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* Keep important DJEP hidden items hidden */
-#upcomingeventid,
-.djep-SubmitHide,
-[hidden] {
-    display: none !important;
-}
+/* ---------- FORMS ---------- */
 
-#welcomeHTML {
-    display: block !important;
-}
-
-/* Typography */
-h1.djep-h1,
-h1 {
-    color: #2a211b !important;
-    font-size: clamp(26px, 4vw, 40px) !important;
-    line-height: 1.1 !important;
-    letter-spacing: -0.03em !important;
-}
-
-h2.djep-h2,
-h2 {
-    color: #8a6547 !important;
-    font-size: clamp(22px, 3vw, 30px) !important;
-}
-
-h3.djep-h3,
-h3 {
-    color: #3b332d !important;
-    font-size: 20px !important;
-}
-
-p,
-p.djep-p-standard {
-    color: var(--mm-text) !important;
-    font-size: 15px !important;
-}
-
-/* Navigation - responsive and visible */
-#djep-navbar {
-    width: calc(100% - 28px) !important;
-    max-width: 1180px !important;
-    margin: 10px auto !important;
-}
-
-ul#djep-navigation {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: stretch !important;
-    gap: 10px !important;
-    list-style: none !important;
-    padding: 12px !important;
-    margin: 0 auto !important;
-    overflow: visible !important;
-    box-sizing: border-box !important;
-}
-
-ul#djep-navigation li:not(.shadow) {
-    float: none !important;
-    width: auto !important;
-    min-width: 132px !important;
-    margin: 0 !important;
-    background: var(--mm-card) !important;
-    border: 1px solid var(--mm-border) !important;
-    border-radius: 999px !important;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.06) !important;
-    position: relative !important;
-    overflow: hidden !important;
-}
-
-ul#djep-navigation li.shadow {
-    display: none !important;
-}
-
-ul#djep-navigation li a,
-ul#djep-navigation li a:link,
-ul#djep-navigation li a:visited {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;
-    height: auto !important;
-    min-height: 44px !important;
-    line-height: 1.15 !important;
-    padding: 12px 18px !important;
-    color: #3a2b22 !important;
-    background: transparent !important;
-    font-size: 13px !important;
-    font-weight: 800 !important;
-    letter-spacing: 0.04em !important;
-    text-transform: uppercase !important;
-    text-decoration: none !important;
-    box-sizing: border-box !important;
-}
-
-ul#djep-navigation li:hover,
-ul#djep-navigation li.selected {
-    background: linear-gradient(135deg, var(--mm-accent-light), var(--mm-accent)) !important;
-    border-color: var(--mm-accent-dark) !important;
-}
-
-ul#djep-navigation li.selected a,
-ul#djep-navigation li.selected a:link,
-ul#djep-navigation li.selected a:visited {
-    color: #211912 !important;
-    border: none !important;
-    background: transparent !important;
-}
-
-/* Title Bars / Section Headers */
-.djep-titlebar,
-.djep-titlebarsmall,
-.djep-titlebarsmaller,
-.djep-titlebarnotices,
-.djep-requestlimittitle,
-.djep-sectiontitle,
-.djep-databaseheader,
-.djep-special_song_header {
-    display: block !important;
-    width: auto !important;
-    max-width: 100% !important;
-    clear: both !important;
-    background: linear-gradient(135deg, #fff7ee, var(--mm-accent-light)) !important;
-    color: #2b2119 !important;
-    border: 1px solid var(--mm-border) !important;
-    border-left: 5px solid var(--mm-accent-dark) !important;
-    border-radius: var(--mm-radius) !important;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.05) !important;
-    font-weight: 800 !important;
-    font-size: 15px !important;
-    padding: 13px 16px !important;
-    margin: 18px auto 12px !important;
-    box-sizing: border-box !important;
-}
-
-.djep-titlebarconfirm,
-.djep-titlebarmusicconfirm {
-    background: #eaf8ed !important;
-    color: #155d27 !important;
-    border: 1px solid #bde5c5 !important;
-    border-left: 5px solid var(--mm-success) !important;
-    border-radius: var(--mm-radius) !important;
-}
-
-.djep-titlebarsmallalert,
-.djep-titlebarlockout {
-    background: #fff0ee !important;
-    color: var(--mm-danger) !important;
-    border: 1px solid #ffd0cc !important;
-    border-left: 5px solid var(--mm-danger) !important;
-    border-radius: var(--mm-radius) !important;
-}
-
-.djep-songrequesttotals,
-.djep-specialdescription,
-.djep-songideaerror {
-    background: #fff9e6 !important;
-    color: #533900 !important;
-    border: 1px solid #f1d489 !important;
-    border-radius: 14px !important;
-    padding: 12px !important;
-}
-
-/* Forms / Inputs */
-#djep-form-div,
-#djep-contactbox,
-.djep-databasebox,
-.djep-service-desc-div,
-.djep-servicedetailsfieldset {
-    background: var(--mm-card-soft) !important;
-    border: 1px solid var(--mm-border) !important;
-    border-radius: var(--mm-radius) !important;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.04) !important;
-    padding: 14px !important;
-    box-sizing: border-box !important;
-}
-
-input.djep-input,
-select.djep-select,
-textarea.djep-textarea,
-.djep-musicsearchform,
-.djep-songideasdropdown,
-.djep-songgenresdropdown,
 input[type="text"],
 input[type="email"],
-input[type="password"],
 input[type="tel"],
-input[type="number"],
+input[type="password"],
 input[type="date"],
+input[type="time"],
+input[type="number"],
 select,
 textarea {
-    background: #ffffff !important;
-    color: var(--mm-text) !important;
-    border: 1px solid #d9cabe !important;
-    border-radius: 12px !important;
-    padding: 10px 12px !important;
-    min-height: 42px !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif !important;
-    font-size: 14px !important;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.04) !important;
+  width: 100% !important;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 11px 12px !important;
+  border: 1px solid var(--mm-border) !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  color: var(--mm-text) !important;
+  font-size: 16px !important;
+  box-sizing: border-box;
 }
 
-textarea.djep-textarea,
 textarea {
-    min-height: 110px !important;
-    line-height: 1.45 !important;
+  min-height: 110px;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-    outline: 3px solid rgba(203,185,168,0.45) !important;
-    border-color: var(--mm-accent-dark) !important;
+  outline: 3px solid rgba(203,185,168,0.45) !important;
+  border-color: var(--mm-gold-dark) !important;
 }
 
-.djep-form label {
-    color: #4c4037 !important;
-    font-size: 15px !important;
-    font-weight: 700 !important;
-}
+/* ---------- TABLES ---------- */
 
-/* Buttons - visible but DJEP-safe */
-.djep-planeventbutton,
-.djep-eventdetailsbutton,
-.djep-paymentbutton,
-.djep-readviewbutton,
-.djep-actionbutton,
-.djep-logoutbutton,
-.djep-searchbutton,
-.djep-clipboardbutton,
-.djep-songideabutton,
-.djep-specialsongbutton,
-.djep-toplistbuttons,
-.djep-toplistbuttons2,
-.djep-toplistbuttons2_active,
-.djep-toplistbuttons3,
-.djep-toplistbuttons3_active,
-.djep-toplistbuttons4,
-.djep-toplistbuttons4_active,
-.djep-toplistbuttons5,
-.djep-artistsongbuttons,
-.djep-paginatebutton,
-.djep-activepaginatebutton,
-input.djep-widgetaction,
-.djep-submit input,
-input[type="submit"],
-input[type="button"],
-button {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: relative !important;
-    z-index: 2 !important;
-    min-height: 40px !important;
-    min-width: 44px !important;
-    width: auto !important;
-    max-width: 100% !important;
-    padding: 10px 16px !important;
-    margin: 4px !important;
-    background: linear-gradient(135deg, #f6eadf, var(--mm-accent)) !important;
-    color: #221812 !important;
-    border: 1px solid var(--mm-accent-dark) !important;
-    border-radius: 999px !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif !important;
-    font-size: 13px !important;
-    font-weight: 800 !important;
-    line-height: 1.15 !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    text-transform: none !important;
-    cursor: pointer !important;
-    box-sizing: border-box !important;
-    white-space: normal !important;
-}
-
-.djep-paymentbutton {
-    background: linear-gradient(135deg, #f5e4ff, #d9b7f4) !important;
-    border-color: #9b6abd !important;
-}
-
-.djep-planeventbutton {
-    background: linear-gradient(135deg, #e8f8e9, #bde5c5) !important;
-    border-color: #66a96f !important;
-    color: #123f1c !important;
-}
-
-.djep-logoutbutton,
-.djep-actionbutton,
-.djep-searchbutton {
-    background: linear-gradient(135deg, #2f2f2f, #111111) !important;
-    border-color: #111 !important;
-    color: #ffffff !important;
-}
-
-.djep-activepaginatebutton,
-.djep-toplistbuttons2_active,
-.djep-toplistbuttons3_active,
-.djep-toplistbuttons4_active {
-    background: #ffffff !important;
-    color: #111 !important;
-    border: 2px solid var(--mm-accent-dark) !important;
-}
-
-.djep-planeventbutton:hover,
-.djep-eventdetailsbutton:hover,
-.djep-paymentbutton:hover,
-.djep-readviewbutton:hover,
-.djep-actionbutton:hover,
-.djep-logoutbutton:hover,
-.djep-searchbutton:hover,
-.djep-clipboardbutton:hover,
-.djep-songideabutton:hover,
-.djep-specialsongbutton:hover,
-.djep-toplistbuttons:hover,
-.djep-toplistbuttons2:hover,
-.djep-toplistbuttons3:hover,
-.djep-toplistbuttons4:hover,
-.djep-toplistbuttons5:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover,
-button:hover {
-    filter: brightness(1.04) !important;
-    transform: translateY(-1px) !important;
-    text-decoration: none !important;
-}
-
-/* Manage Music / Music Request Area Visibility Fix */
-.djep-music_selections_navigation,
-.djep-requestonlytitle,
-.djep-requestlimitbox,
-.djep-playlistbuttonoverrides,
-[class*="music"],
-[class*="playlist"] {
-    visibility: visible;
-}
-
-.djep-music_selections_navigation {
-    width: auto !important;
-    max-width: 100% !important;
-    min-height: 44px !important;
-    height: auto !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: #ffffff !important;
-    border: 1px solid var(--mm-border) !important;
-    border-radius: 999px !important;
-    padding: 6px !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06) !important;
-    box-sizing: border-box !important;
-}
-
-.djep-music_selections_navigation ul {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 6px !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-}
-
-.djep-music_selections_navigation li {
-    float: none !important;
-    width: auto !important;
-    height: auto !important;
-    margin: 0 !important;
-}
-
-.djep-music_selections_navigation li a,
-.djep-music_selections_navigation-li a,
-.djep-music_selections_navigation-active a,
-.djep-playlistbuttonoverrides a {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;
-    min-width: 115px !important;
-    min-height: 36px !important;
-    height: auto !important;
-    padding: 9px 13px !important;
-    background: #fffaf5 !important;
-    color: #2b2119 !important;
-    border: 1px solid var(--mm-border) !important;
-    border-radius: 999px !important;
-    font-weight: 800 !important;
-    text-decoration: none !important;
-    box-sizing: border-box !important;
-}
-
-.djep-music_selections_navigation-active a {
-    background: linear-gradient(135deg, #f6eadf, var(--mm-accent)) !important;
-    border-color: var(--mm-accent-dark) !important;
-}
-
-/* Playlist Panels */
-.djep-playlistbox,
-.djep-playlistboxspotify,
-.djep-playlistboxmustplay,
-.djep-playlistboxdonotplay,
-.djep-playlistboxplayifposs,
-.djep-playlistboxdedications,
-.djep-playlistboxonlyrequest,
-.djep-playlistboxcustomtype1,
-.djep-playlistboxcustomtype2,
-.djep-playlistboxcustomtype3,
-.djep-playlistboxcustomtype4,
-.djep-playlistboxcustomtype5,
-.djep-special_song_content_div,
-.djep-specialsongcontent {
-    background: #ffffff !important;
-    color: var(--mm-text) !important;
-    border: 1px solid var(--mm-border) !important;
-    border-radius: var(--mm-radius) !important;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.05) !important;
-    overflow: visible !important;
-}
-
-.djep-playlistboxspotifytitle,
-.djep-playlistboxmustplaytitle,
-.djep-playlistboxplayifposstitle,
-.djep-playlistboxdedicationstitle,
-.djep-playlistboxonlyrequesttitle,
-.djep-playlistboxdonotplaytitle,
-.djep-playlistboxcustomtype1title,
-.djep-playlistboxcustomtype2title,
-.djep-playlistboxcustomtype3title,
-.djep-playlistboxcustomtype4title,
-.djep-playlistboxcustomtype5title {
-    background: linear-gradient(135deg, #fff7ee, var(--mm-accent-light)) !important;
-    color: #2b2119 !important;
-    border: 1px solid var(--mm-border) !important;
-    border-radius: 14px 14px 0 0 !important;
-    min-height: 38px !important;
-    height: auto !important;
-    font-weight: 800 !important;
-}
-
-.djep-playlistboxdonotplaytitle {
-    background: #fff0ee !important;
-    color: var(--mm-danger) !important;
-}
-
-.djep-playlistboxmustplaytitle,
-.djep-playlistboxspotifytitle {
-    background: #eef9ef !important;
-    color: #155d27 !important;
-}
-
-.djep-playlistboxplayifposstitle {
-    background: #fff9e6 !important;
-    color: #6b4900 !important;
-}
-
-.djep-playlistboxdedicationstitle {
-    background: #eef6ff !important;
-    color: var(--mm-info) !important;
-}
-
-.djep-playlisttitle,
-.djep-specialtitle {
-    position: static !important;
-    display: inline-block !important;
-    padding: 10px 14px !important;
-    color: inherit !important;
-}
-
-.djep-playlistlimits,
-.djep-playlistcounterspan,
-.djep-musiccounterspan {
-    color: var(--mm-muted) !important;
-}
-
-/* Tables */
 table {
-    max-width: 100% !important;
-    border-collapse: separate !important;
-    border-spacing: 0 !important;
-}
-
-.djep-odd,
-tr.djep-odd {
-    background-color: #fffaf5 !important;
-}
-
-.djep-even,
-tr.djep-even {
-    background-color: #ffffff !important;
-}
-
-.djep-table-headers,
-.djep-databasetableheader,
-th {
-    background: #f0e6dc !important;
-    color: #2b2119 !important;
-    font-weight: 800 !important;
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  overflow: hidden;
+  margin-bottom: 18px !important;
 }
 
 td,
 th {
-    color: var(--mm-text) !important;
-    border-color: var(--mm-border) !important;
-    padding: 9px !important;
-    vertical-align: middle !important;
+  padding: 12px !important;
+  border-bottom: 1px solid var(--mm-border) !important;
+  vertical-align: top !important;
 }
 
-.djep-tablehover,
-tr:hover {
-    background-color: #f6eadf !important;
+th {
+  background: #efe6dd !important;
+  color: var(--mm-text) !important;
+  font-weight: 800 !important;
 }
 
-/* Status Rows */
-.djep-balanceduerow {
-    background-color: #fff2cc !important;
-    color: #7a4d00 !important;
+/* ---------- TOP NAV / PORTAL LINKS ---------- */
+
+.nav,
+.menu,
+.portal-nav,
+.client-nav,
+#nav,
+#menu {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px;
+  margin-bottom: 20px !important;
 }
 
-.djep-balancepaidrow {
-    background-color: #eaf8ed !important;
-    color: #155d27 !important;
+.nav a,
+.menu a,
+.portal-nav a,
+.client-nav a,
+#nav a,
+#menu a {
+  display: inline-flex !important;
+  padding: 12px 16px !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  border: 1px solid var(--mm-border) !important;
+  color: var(--mm-text) !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
 }
 
-.djep-totalfeerow,
-.djep-totalfeerow span {
-    background-color: #eaf5ff !important;
-    color: #174f86 !important;
+.nav a:hover,
+.menu a:hover,
+.portal-nav a:hover,
+.client-nav a:hover,
+#nav a:hover,
+#menu a:hover {
+  background: var(--mm-gold) !important;
+  color: #1f1f1f !important;
+  text-decoration: none !important;
 }
 
-.djep-totaldepositrow {
-    background-color: #fff0ee !important;
-    color: var(--mm-danger) !important;
+/* ---------- ALERTS / NOTES ---------- */
+
+.note,
+.notice,
+.alert,
+.message,
+.success,
+.error {
+  padding: 14px 16px !important;
+  border-radius: 14px !important;
+  margin: 14px 0 !important;
+  border: 1px solid var(--mm-border) !important;
+  background: #fffaf5 !important;
+  color: var(--mm-text) !important;
 }
 
-/* Calendar */
-.calendar {
-    background: #ffffff !important;
-    border: 1px solid var(--mm-border) !important;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.10) !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-}
-
-.calendar > .month {
-    background: var(--mm-accent-dark) !important;
-    color: #ffffff !important;
-}
-
-.calendar > .day {
-    color: #2b2119 !important;
-}
-
-.calendar > .year {
-    color: var(--mm-muted) !important;
-}
-
-/* FAQ Accordion */
-.djep-accordionButton {
-    background: #ffffff !important;
-    color: var(--mm-text) !important;
-    border: 1px solid var(--mm-border) !important;
-    border-radius: 14px !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
-    padding: 12px !important;
-}
-
-.djep-accordionContent {
-    background: #fffaf5 !important;
-    color: var(--mm-text) !important;
-    border-radius: 0 0 14px 14px !important;
-}
-
-/* Utility */
-.djep-viewplanningformdiv {
-    width: 100% !important;
-    max-width: 100% !important;
-    border: 1px solid var(--mm-border) !important;
-    border-radius: var(--mm-radius) !important;
-    background: #ffffff !important;
-    box-sizing: border-box !important;
-}
-
-.djep-opaque {
-    opacity: 1 !important;
-}
-
-.djep-opaque:hover {
-    opacity: 0.75 !important;
-}
+/* ---------- IMAGES ---------- */
 
 img {
-    max-width: 100% !important;
-    height: auto !important;
+  max-width: 100%;
+  height: auto;
 }
 
-/* Mobile Layout */
-@media (max-width: 900px) {
-    #djep-content,
-    #djep-guestrequestcontent,
-    #djep-navbar {
-        width: calc(100% - 16px) !important;
-        margin: 8px auto !important;
-    }
+/* ---------- MOBILE ---------- */
 
-    #djep-content,
-    #djep-guestrequestcontent {
-        padding: 14px !important;
-        border-radius: 18px !important;
-    }
+@media screen and (max-width: 768px) {
 
-    ul#djep-navigation {
-        gap: 8px !important;
-        padding: 8px !important;
-    }
+  body {
+    font-size: 15px !important;
+  }
 
-    ul#djep-navigation li:not(.shadow) {
-        min-width: 0 !important;
-        width: calc(50% - 8px) !important;
-        border-radius: 14px !important;
-    }
+  #container,
+  #wrapper,
+  #main,
+  #content,
+  .content,
+  .maincontent {
+    width: 100% !important;
+    padding: 12px !important;
+  }
 
-    ul#djep-navigation li a,
-    ul#djep-navigation li a:link,
-    ul#djep-navigation li a:visited {
-        min-height: 46px !important;
-        padding: 10px 8px !important;
-        font-size: 12px !important;
-        letter-spacing: 0.02em !important;
-    }
+  h1 {
+    font-size: 24px !important;
+  }
 
-    .djep-titlebar,
-    .djep-titlebarsmall,
-    .djep-titlebarsmaller,
-    .djep-titlebarnotices,
-    .djep-requestlimittitle {
-        margin: 14px 0 10px !important;
-        padding: 12px !important;
-    }
+  h2 {
+    font-size: 21px !important;
+  }
 
-    .djep-music_selections_navigation {
-        border-radius: 16px !important;
-    }
+  h3 {
+    font-size: 18px !important;
+  }
 
-    .djep-music_selections_navigation ul {
-        width: 100% !important;
-    }
+  .nav,
+  .menu,
+  .portal-nav,
+  .client-nav,
+  #nav,
+  #menu {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
 
-    .djep-music_selections_navigation li,
-    .djep-music_selections_navigation li a,
-    .djep-music_selections_navigation-li a,
-    .djep-music_selections_navigation-active a,
-    .djep-playlistbuttonoverrides a {
-        width: 100% !important;
-        min-width: 0 !important;
-    }
+  .nav a,
+  .menu a,
+  .portal-nav a,
+  .client-nav a,
+  #nav a,
+  #menu a,
+  input[type="submit"],
+  input[type="button"],
+  button,
+  .button,
+  .btn,
+  .djep-button,
+  .djep_button,
+  a.button,
+  a.btn,
+  a.djep-button,
+  a.djep_button {
+    width: 100% !important;
+    margin: 6px 0 !important;
+    justify-content: center !important;
+  }
 
-    .djep-planeventbutton,
-    .djep-eventdetailsbutton,
-    .djep-paymentbutton,
-    .djep-readviewbutton,
-    .djep-actionbutton,
-    .djep-logoutbutton,
-    .djep-searchbutton,
-    .djep-clipboardbutton,
-    .djep-songideabutton,
-    .djep-specialsongbutton,
-    .djep-toplistbuttons,
-    .djep-toplistbuttons2,
-    .djep-toplistbuttons2_active,
-    .djep-toplistbuttons3,
-    .djep-toplistbuttons3_active,
-    .djep-toplistbuttons4,
-    .djep-toplistbuttons4_active,
-    .djep-toplistbuttons5,
-    input[type="submit"],
-    input[type="button"],
-    button {
-        width: 100% !important;
-        margin: 5px 0 !important;
-        border-radius: 14px !important;
-    }
+  table,
+  tbody,
+  tr,
+  td,
+  th {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
 
-    input.djep-input,
-    select.djep-select,
-    textarea.djep-textarea,
-    input,
-    select,
-    textarea {
-        width: 100% !important;
-    }
+  tr {
+    margin-bottom: 12px !important;
+    border-bottom: 1px solid var(--mm-border) !important;
+  }
+
+  td,
+  th {
+    border-bottom: none !important;
+    padding: 10px !important;
+  }
+
+  fieldset,
+  .formbox,
+  .box,
+  .panel,
+  .section {
+    padding: 14px !important;
+    border-radius: 14px !important;
+  }
 }
 
-@media (max-width: 600px) {
-    body.djep-body,
-    body {
-        font-size: 13px !important;
-    }
+/* ---------- SMALL MOBILE ---------- */
 
-    #djep-content,
-    #djep-guestrequestcontent {
-        width: 100% !important;
-        margin: 0 auto !important;
-        border-radius: 0 !important;
-        border-left: none !important;
-        border-right: none !important;
-        padding: 10px !important;
-    }
+@media screen and (max-width: 480px) {
 
-    ul#djep-navigation li:not(.shadow) {
-        width: 100% !important;
-    }
+  body {
+    background: #ffffff !important;
+  }
 
-    table,
-    thead,
-    tbody,
-    tr,
-    th,
-    td {
-        max-width: 100% !important;
-    }
+  #container,
+  #wrapper,
+  #main,
+  #content,
+  .content,
+  .maincontent {
+    padding: 10px !important;
+  }
 
-    table {
-        display: block !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
+  fieldset,
+  table,
+  .formbox,
+  .box,
+  .panel,
+  .section {
+    box-shadow: none !important;
+  }
 
-    .djep-changebutton,
-    #djep-printhelper,
-    #print_helper {
-        float: none !important;
-        width: 100% !important;
-        text-align: center !important;
-        padding: 6px 0 !important;
-    }
-
-    .djep-playlistlimits,
-    .djep-playlistcounterspan,
-    .djep-musiccounterspan {
-        float: none !important;
-        display: block !important;
-        margin: 4px 0 !important;
-        text-align: left !important;
-    }
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px !important;
+  }
 }
