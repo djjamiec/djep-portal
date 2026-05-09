@@ -2895,3 +2895,149 @@ th, .djep-table-headers { background: #f5efe5 !important; color: var(--mm-black-
   ul#djep-navigation li { flex-basis: 100%; }
   #djep-content, #djep-guestrequestcontent { padding: 14px !important; }
 }
+
+/* ============================================================
+   DJEP MUSIC MANAGEMENT BUTTON VISIBILITY PATCH
+   Keeps original features intact while making older DJEP music
+   controls visible/clickable in the Manage Music area.
+   ============================================================ */
+
+/* Older DJEP music-management links/buttons that may not use the newer button class names */
+.djep-managemusicbox a,
+.djep-selectyourmusicbox a,
+.djep-playlistbox a,
+.djep-playlistboxspotify a,
+.djep-playlistboxmustplay a,
+.djep-playlistboxdonotplay a,
+.djep-playlistboxplayifposs a,
+.djep-playlistboxdedications a,
+.djep-playlistboxonlyrequest a,
+.djep-special_song_content_div a,
+.djep-specialsongcontent a,
+#guest_request_container a,
+#guest_request_container input[type="button"],
+#guest_request_container input[type="submit"],
+.djep-guestsubmitrequests,
+.djep-guestsubmit,
+.djep-guestlogout,
+.djep-songideabutton,
+.djep-specialsongbutton,
+.djep-actionbutton,
+.djep-searchbutton,
+.djep-clipboardbutton,
+.djep-toplistbuttons,
+.djep-toplistbuttons2,
+.djep-toplistbuttons3,
+.djep-toplistbuttons4,
+.djep-toplistbuttons5,
+.djep-artistsongbuttons {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 38px !important;
+  min-width: 92px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  padding: 9px 14px !important;
+  margin: 4px 4px !important;
+  border: 1px solid rgba(203, 185, 168, .55) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #151515, #34302b) !important;
+  color: #ffffff !important;
+  font-family: var(--mm-font, Arial, Helvetica, sans-serif) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,.14) !important;
+  cursor: pointer !important;
+  position: relative;
+  z-index: 5;
+}
+
+/* Primary actions such as Add Requests / Submit Requests */
+.djep-managemusicbox input[type="submit"],
+.djep-managemusicbox input[type="button"],
+.djep-selectyourmusicbox input[type="submit"],
+.djep-selectyourmusicbox input[type="button"],
+.djep-guestsubmitrequests,
+.djep-guestsubmit,
+input[value*="Add"],
+input[value*="Submit"],
+input[value*="Save"],
+input[value*="Request"] {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 40px !important;
+  width: auto !important;
+  padding: 10px 18px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, var(--mm-gold, #CBB9A8), var(--mm-gold-2, #e8d2b8)) !important;
+  color: #111111 !important;
+  font-weight: 900 !important;
+  box-shadow: 0 10px 22px rgba(203,185,168,.28) !important;
+}
+
+/* Do not turn tiny icon/image controls into giant pills */
+.djep-managemusicbox img,
+.djep-selectyourmusicbox img,
+.djep-playlistbox img,
+#guest_request_container img,
+input[type="image"] {
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 3px !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Keep music rows from clipping buttons */
+.djep-managemusicbox,
+.djep-selectyourmusicbox,
+.djep-playlistbox,
+.djep-playlistboxspotify,
+.djep-playlistboxmustplay,
+.djep-playlistboxdonotplay,
+.djep-playlistboxplayifposs,
+.djep-playlistboxdedications,
+.djep-playlistboxonlyrequest,
+.djep-special_song_content_div,
+.djep-specialsongcontent,
+#guest_request_container {
+  overflow: visible !important;
+}
+
+@media (max-width: 760px) {
+  .djep-managemusicbox a,
+  .djep-selectyourmusicbox a,
+  .djep-playlistbox a,
+  .djep-special_song_content_div a,
+  .djep-specialsongcontent a,
+  #guest_request_container a,
+  #guest_request_container input[type="button"],
+  #guest_request_container input[type="submit"],
+  .djep-guestsubmitrequests,
+  .djep-guestsubmit,
+  .djep-specialsongbutton,
+  .djep-songideabutton,
+  .djep-actionbutton {
+    width: auto !important;
+    min-width: 44% !important;
+    margin: 5px 3px !important;
+    white-space: normal !important;
+  }
+}
