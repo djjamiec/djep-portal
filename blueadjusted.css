@@ -1,4 +1,25 @@
 /* =========================
+
+tr.djep-odd {
+    background: #1e1e1e !important;
+}
+
+tr.djep-even {
+    background: #252525 !important;
+}
+
+td,
+th {
+    color: #f3f3f3 !important;
+    padding: 10px !important;
+    border-color: #333 !important;
+}
+
+/* Title bars */
+.djep-titlebar,
+.djep-titlebarsmall,
+.djep-titlebarsmaller,
+.djep-titlebarnotices,
 .djep-titlebarconfirm {
     background: linear-gradient(135deg,#cbb9a8,#8f7660) !important;
     color: #111 !important;
