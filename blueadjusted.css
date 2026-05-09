@@ -3581,3 +3581,399 @@ input[type="image"] {
     max-width: 260px !important;
   }
 }
+
+/* ==========================================================
+   MOBILE-FIRST RESPONSIVE RESCUE LAYER
+   Keeps DJEP features intact while making the portal easier
+   to use on phones and tablets.
+   ========================================================== */
+
+html,
+body.djep-body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  -webkit-text-size-adjust: 100% !important;
+}
+
+body.djep-body {
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+}
+
+#djep-page,
+#djep-guestrequestpage,
+#djep-header,
+#djep-navbar,
+#djep-content,
+#djep-guestrequestcontent {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+}
+
+#djep-navbar,
+#djep-content,
+#djep-guestrequestcontent {
+  width: min(100%, 1040px) !important;
+}
+
+#djep-content,
+#djep-guestrequestcontent {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+img,
+iframe,
+object,
+embed,
+video {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Navigation: wrap cleanly instead of squeezing fixed tabs. */
+ul#djep-navigation {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 14px 10px !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+ul#djep-navigation li {
+  float: none !important;
+  width: auto !important;
+  min-width: 130px !important;
+  flex: 1 1 130px !important;
+  max-width: 190px !important;
+  margin: 0 !important;
+  height: auto !important;
+}
+
+ul#djep-navigation li a:link,
+ul#djep-navigation li a:visited,
+ul#djep-navigation li a {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 44px !important;
+  line-height: 1.2 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 12px 10px !important;
+  box-sizing: border-box !important;
+  white-space: normal !important;
+}
+
+ul#djep-navigation li.shadow {
+  display: none !important;
+}
+
+/* Forms and inputs: readable and tappable on mobile. */
+input.djep-input,
+select.djep-select,
+textarea.djep-textarea,
+.djep-musicsearchform,
+.djep-songideasdropdown,
+.djep-songgenresdropdown,
+select.djep-printbox,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="date"],
+select,
+textarea {
+  max-width: 100% !important;
+  width: 100% !important;
+  min-height: 44px !important;
+  box-sizing: border-box !important;
+  font-size: 16px !important;
+}
+
+textarea.djep-textarea,
+.djep-textarea_notes,
+.djep-textarea_todo {
+  min-height: 96px !important;
+}
+
+#djep-wrapper,
+#djep-form-div,
+.djep-form,
+.djep-viewplanningformdiv,
+#djep-contactbox {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Buttons: tap-friendly and visible. */
+.djep-planeventbutton,
+.djep-eventdetailsbutton,
+.djep-paymentbutton,
+.djep-readviewbutton,
+.djep-actionbutton,
+.djep-logoutbutton,
+.djep-searchbutton,
+.djep-clipboardbutton,
+.djep-songideabutton,
+.djep-specialsongbutton,
+.djep-toplistbuttons,
+.djep-toplistbuttons2,
+.djep-toplistbuttons2_active,
+.djep-toplistbuttons3,
+.djep-toplistbuttons3_active,
+.djep-toplistbuttons4,
+.djep-toplistbuttons4_active,
+.djep-toplistbuttons5,
+.djep-artistsongbuttons,
+input[type="button"],
+input[type="submit"],
+button {
+  min-height: 44px !important;
+  box-sizing: border-box !important;
+  white-space: normal !important;
+  line-height: 1.2 !important;
+  touch-action: manipulation !important;
+}
+
+/* Tables: keep content usable on narrow screens. */
+table {
+  max-width: 100% !important;
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+
+td,
+th {
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+.djep-planningformsbox,
+.djep-timelinebox,
+.djep-ourcontactinfobox,
+.djep-databasebox,
+.djep-playlistbox,
+.djep-playlistboxspotify,
+.djep-playlistboxmustplay,
+.djep-playlistboxdonotplay,
+.djep-playlistboxplayifposs,
+.djep-playlistboxdedications,
+.djep-playlistboxonlyrequest,
+.djep-playlistboxcustomtype1,
+.djep-playlistboxcustomtype2,
+.djep-playlistboxcustomtype3,
+.djep-playlistboxcustomtype4,
+.djep-playlistboxcustomtype5 {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-x: auto !important;
+}
+
+/* Music selection nav: easier on phones. */
+.djep-music_selections_navigation {
+  width: 100% !important;
+  max-width: 420px !important;
+  height: auto !important;
+  min-height: 44px !important;
+  box-sizing: border-box !important;
+  padding: 6px !important;
+}
+
+.djep-music_selections_navigation ul {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  float: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.djep-music_selections_navigation li {
+  float: none !important;
+  flex: 1 1 130px !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+.djep-music_selections_navigation li a {
+  width: 100% !important;
+  min-height: 40px !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 8px !important;
+  box-sizing: border-box !important;
+}
+
+/* Manage Music cards: responsive grid. */
+#djep-addsongimage,
+#djep-musicrequestsimage,
+#djep-specialsongsimage,
+#djep-printrequestsimage,
+#djep-guestrequestsimage {
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 820px) {
+  body.djep-body {
+    padding: 0 !important;
+    background-attachment: scroll !important;
+  }
+
+  #djep-content,
+  #djep-guestrequestcontent {
+    width: calc(100% - 20px) !important;
+    margin: 10px auto !important;
+    padding: 16px 12px !important;
+    border-radius: 18px !important;
+  }
+
+  h1.djep-h1 { font-size: 26px !important; line-height: 1.15 !important; }
+  h2.djep-h2 { font-size: 21px !important; line-height: 1.2 !important; }
+  h3.djep-h3 { font-size: 18px !important; line-height: 1.25 !important; }
+  p.djep-p-standard { font-size: 15px !important; }
+
+  .djep-titlebar,
+  .djep-titlebarsmall,
+  .djep-titlebarsmaller,
+  .djep-titlebarsmallalert,
+  .djep-titlebarconfirm,
+  .djep-titlebarmusicconfirm,
+  .djep-titlebarnotices,
+  .djep-titlebarlockout,
+  .djep-requestlimittitle {
+    width: 100% !important;
+    margin: 14px auto !important;
+    padding: 12px 14px !important;
+    box-sizing: border-box !important;
+    font-size: 15px !important;
+  }
+
+  #djep-addsongimage,
+  #djep-musicrequestsimage,
+  #djep-specialsongsimage,
+  #djep-printrequestsimage,
+  #djep-guestrequestsimage {
+    width: calc(50% - 14px) !important;
+    min-width: 0 !important;
+    margin: 7px !important;
+  }
+
+  #djep-addsongimage a,
+  #djep-musicrequestsimage a,
+  #djep-specialsongsimage a,
+  #djep-printrequestsimage a,
+  #djep-guestrequestsimage a {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: 128px !important;
+    min-height: 128px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  #djep-content,
+  #djep-guestrequestcontent {
+    width: calc(100% - 12px) !important;
+    padding: 12px 8px !important;
+    border-radius: 14px !important;
+  }
+
+  ul#djep-navigation {
+    gap: 6px !important;
+    padding: 10px 6px !important;
+  }
+
+  ul#djep-navigation li {
+    flex-basis: calc(50% - 6px) !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+
+  ul#djep-navigation li a:link,
+  ul#djep-navigation li a:visited,
+  ul#djep-navigation li a {
+    font-size: 11px !important;
+    letter-spacing: .04em !important;
+    padding: 11px 6px !important;
+  }
+
+  #djep-printhelper,
+  #print_helper,
+  .djep-changebutton,
+  .djep-musiccounterspan,
+  .djep-playlistcounterspan,
+  .djep-playlistlimits {
+    float: none !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 8px 0 !important;
+    padding: 0 !important;
+  }
+
+  .djep-playlisttitle,
+  .djep-specialtitle {
+    position: static !important;
+    display: block !important;
+    padding: 10px 12px !important;
+    text-align: center !important;
+  }
+
+  .djep-requestonlytitle,
+  .djep-requestlimitbox,
+  .djep-songrequesttotals {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body.djep-body {
+    font-size: 14px !important;
+  }
+
+  ul#djep-navigation li {
+    flex-basis: 100% !important;
+  }
+
+  #djep-addsongimage,
+  #djep-musicrequestsimage,
+  #djep-specialsongsimage,
+  #djep-printrequestsimage,
+  #djep-guestrequestsimage {
+    width: 100% !important;
+    margin: 7px 0 !important;
+  }
+
+  #djep-addsongimage a,
+  #djep-musicrequestsimage a,
+  #djep-specialsongsimage a,
+  #djep-printrequestsimage a,
+  #djep-guestrequestsimage a {
+    width: 100% !important;
+    max-width: 280px !important;
+    height: 116px !important;
+    min-height: 116px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .calendar {
+    transform: scale(.9) !important;
+    transform-origin: top center !important;
+  }
+}
