@@ -1,154 +1,71 @@
-/* Midnight Music Modern DJEP Portal CSS */
-/* Paste into DJ Event Planner Custom CSS */
+/* DJ Event Planner Safe Modern CSS */
 
-/* ---------- GLOBAL ---------- */
-
-:root {
-  --mm-bg: #f8f5f1;
-  --mm-card: #ffffff;
-  --mm-text: #1f1f1f;
-  --mm-muted: #666666;
-  --mm-gold: #cbb9a8;
-  --mm-gold-dark: #a88f78;
-  --mm-border: #e6ded6;
-  --mm-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  --mm-radius: 16px;
-}
-
-html,
+/* Global */
 body {
-  margin: 0;
-  padding: 0;
-  background: var(--mm-bg) !important;
-  color: var(--mm-text) !important;
+  background: #f7f3ee !important;
+  color: #222 !important;
   font-family: Arial, Helvetica, sans-serif !important;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
 }
 
-/* ---------- MAIN CONTAINER ---------- */
-
-body,
+/* Main content */
 #container,
 #wrapper,
-#main,
 #content,
-.content,
-.maincontent,
-.portal,
-.client-area {
-  max-width: 1180px;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  box-sizing: border-box;
-}
-
-#container,
-#wrapper,
 #main,
-#content,
 .content,
 .maincontent {
-  padding: 18px !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 16px !important;
+  box-sizing: border-box !important;
 }
 
-/* ---------- CARDS / SECTIONS ---------- */
-
-table,
-.formbox,
-.box,
-.panel,
-.section,
-fieldset,
-.djep-section,
-.event-section,
-.portal-section {
-  background: var(--mm-card) !important;
-  border: 1px solid var(--mm-border) !important;
-  border-radius: var(--mm-radius) !important;
-  box-shadow: var(--mm-shadow);
-  box-sizing: border-box;
+/* Headings */
+h1, h2, h3, h4,
+.title,
+.sectiontitle {
+  color: #222 !important;
+  font-weight: bold !important;
 }
 
-fieldset {
-  padding: 20px !important;
-  margin-bottom: 20px !important;
-}
-
-legend,
-h1,
-h2,
-h3,
-.sectiontitle,
-.title {
-  color: var(--mm-text) !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.02em;
-}
-
-h1 {
-  font-size: 30px !important;
-}
-
-h2 {
-  font-size: 24px !important;
-}
-
-h3 {
-  font-size: 20px !important;
-}
-
-/* ---------- LINKS ---------- */
-
+/* Links */
 a {
-  color: #7a604a !important;
-  font-weight: 700;
-  text-decoration: none;
+  color: #8a6f58 !important;
+  font-weight: bold !important;
 }
 
 a:hover {
-  color: var(--mm-gold-dark) !important;
-  text-decoration: underline;
+  color: #5f4938 !important;
 }
 
-/* ---------- BUTTONS ---------- */
-
+/* Buttons - DJEP safe */
 input[type="submit"],
 input[type="button"],
 button,
 .button,
 .btn,
-.djep-button,
-.djep_button,
 a.button,
 a.btn,
-a.djep-button,
-a.djep_button,
-.manage-music a,
-.manage_music a,
-#manage_music a,
-.music-request a,
-.music_requests a,
-.planningforms a,
-.planning-forms a {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
+.djep-button,
+.djep_button {
+  display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
-  min-height: 44px;
-  padding: 12px 18px !important;
-  margin: 6px 6px 6px 0 !important;
-  border-radius: 999px !important;
-  border: 1px solid var(--mm-gold-dark) !important;
-  background: var(--mm-gold) !important;
-  color: #1f1f1f !important;
-  font-weight: 800 !important;
-  text-align: center !important;
+  background: #cbb9a8 !important;
+  color: #111 !important;
+  border: 1px solid #a88f78 !important;
+  border-radius: 8px !important;
+  padding: 10px 16px !important;
+  margin: 4px !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
   text-decoration: none !important;
   cursor: pointer !important;
-  box-sizing: border-box;
-  transition: all 0.2s ease;
+  line-height: normal !important;
+  height: auto !important;
+  width: auto !important;
 }
 
 input[type="submit"]:hover,
@@ -156,156 +73,58 @@ input[type="button"]:hover,
 button:hover,
 .button:hover,
 .btn:hover,
-.djep-button:hover,
-.djep_button:hover,
 a.button:hover,
-a.btn:hover {
-  background: var(--mm-gold-dark) !important;
-  color: #ffffff !important;
-  transform: translateY(-1px);
-  text-decoration: none !important;
+a.btn:hover,
+.djep-button:hover,
+.djep_button:hover {
+  background: #a88f78 !important;
+  color: #fff !important;
 }
 
-/* Make sure DJEP music buttons never disappear */
-#add_request,
-#add_requests,
-#music_requests,
-#music_request,
-#request_list,
-#special_songs,
-#must_play,
-#do_not_play,
-.add_request,
-.add_requests,
-.music_buttons,
-.request_buttons {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* ---------- FORMS ---------- */
-
+/* Forms */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="password"],
+input[type="number"],
 input[type="date"],
 input[type="time"],
-input[type="number"],
 select,
 textarea {
-  width: 100% !important;
-  max-width: 100%;
-  min-height: 44px;
-  padding: 11px 12px !important;
-  border: 1px solid var(--mm-border) !important;
-  border-radius: 12px !important;
-  background: #ffffff !important;
-  color: var(--mm-text) !important;
-  font-size: 16px !important;
-  box-sizing: border-box;
+  max-width: 100% !important;
+  padding: 9px 10px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  background: #fff !important;
+  color: #222 !important;
+  font-size: 15px !important;
+  box-sizing: border-box !important;
 }
 
-textarea {
-  min-height: 110px;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 3px solid rgba(203,185,168,0.45) !important;
-  border-color: var(--mm-gold-dark) !important;
-}
-
-/* ---------- TABLES ---------- */
-
+/* Keep DJEP tables functional */
 table {
-  width: 100% !important;
-  border-collapse: separate !important;
-  border-spacing: 0 !important;
-  overflow: hidden;
-  margin-bottom: 18px !important;
+  max-width: 100% !important;
 }
 
 td,
 th {
-  padding: 12px !important;
-  border-bottom: 1px solid var(--mm-border) !important;
-  vertical-align: top !important;
+  padding: 8px !important;
 }
 
-th {
-  background: #efe6dd !important;
-  color: var(--mm-text) !important;
-  font-weight: 800 !important;
+/* Boxes */
+fieldset,
+.formbox,
+.box,
+.panel {
+  background: #fff !important;
+  border: 1px solid #ddd !important;
+  border-radius: 10px !important;
+  padding: 16px !important;
+  margin-bottom: 16px !important;
+  box-sizing: border-box !important;
 }
 
-/* ---------- TOP NAV / PORTAL LINKS ---------- */
-
-.nav,
-.menu,
-.portal-nav,
-.client-nav,
-#nav,
-#menu {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 10px;
-  margin-bottom: 20px !important;
-}
-
-.nav a,
-.menu a,
-.portal-nav a,
-.client-nav a,
-#nav a,
-#menu a {
-  display: inline-flex !important;
-  padding: 12px 16px !important;
-  border-radius: 999px !important;
-  background: #ffffff !important;
-  border: 1px solid var(--mm-border) !important;
-  color: var(--mm-text) !important;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-}
-
-.nav a:hover,
-.menu a:hover,
-.portal-nav a:hover,
-.client-nav a:hover,
-#nav a:hover,
-#menu a:hover {
-  background: var(--mm-gold) !important;
-  color: #1f1f1f !important;
-  text-decoration: none !important;
-}
-
-/* ---------- ALERTS / NOTES ---------- */
-
-.note,
-.notice,
-.alert,
-.message,
-.success,
-.error {
-  padding: 14px 16px !important;
-  border-radius: 14px !important;
-  margin: 14px 0 !important;
-  border: 1px solid var(--mm-border) !important;
-  background: #fffaf5 !important;
-  color: var(--mm-text) !important;
-}
-
-/* ---------- IMAGES ---------- */
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ---------- MOBILE ---------- */
-
+/* Mobile safe */
 @media screen and (max-width: 768px) {
 
   body {
@@ -314,120 +133,50 @@ img {
 
   #container,
   #wrapper,
-  #main,
   #content,
+  #main,
   .content,
   .maincontent {
     width: 100% !important;
-    padding: 12px !important;
+    padding: 10px !important;
   }
 
-  h1 {
-    font-size: 24px !important;
-  }
-
-  h2 {
-    font-size: 21px !important;
-  }
-
-  h3 {
-    font-size: 18px !important;
-  }
-
-  .nav,
-  .menu,
-  .portal-nav,
-  .client-nav,
-  #nav,
-  #menu {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 8px !important;
-  }
-
-  .nav a,
-  .menu a,
-  .portal-nav a,
-  .client-nav a,
-  #nav a,
-  #menu a,
   input[type="submit"],
   input[type="button"],
   button,
   .button,
   .btn,
-  .djep-button,
-  .djep_button,
   a.button,
   a.btn,
-  a.djep-button,
-  a.djep_button {
-    width: 100% !important;
-    margin: 6px 0 !important;
-    justify-content: center !important;
-  }
-
-  table,
-  tbody,
-  tr,
-  td,
-  th {
+  .djep-button,
+  .djep_button {
     display: block !important;
     width: 100% !important;
-    box-sizing: border-box;
+    max-width: 100% !important;
+    margin: 6px 0 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
   }
 
-  tr {
-    margin-bottom: 12px !important;
-    border-bottom: 1px solid var(--mm-border) !important;
-  }
-
-  td,
-  th {
-    border-bottom: none !important;
-    padding: 10px !important;
-  }
-
-  fieldset,
-  .formbox,
-  .box,
-  .panel,
-  .section {
-    padding: 14px !important;
-    border-radius: 14px !important;
-  }
-}
-
-/* ---------- SMALL MOBILE ---------- */
-
-@media screen and (max-width: 480px) {
-
-  body {
-    background: #ffffff !important;
-  }
-
-  #container,
-  #wrapper,
-  #main,
-  #content,
-  .content,
-  .maincontent {
-    padding: 10px !important;
-  }
-
-  fieldset,
-  table,
-  .formbox,
-  .box,
-  .panel,
-  .section {
-    box-shadow: none !important;
-  }
-
-  input,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
   select,
-  textarea,
-  button {
+  textarea {
+    width: 100% !important;
     font-size: 16px !important;
+  }
+
+  table {
+    width: 100% !important;
+  }
+
+  img {
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
